@@ -5,6 +5,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 
+  # association
+  has_many :friendships, class_name: "Friendship",
+                        foreign_key: "follower_id",
+                        dependent: :destroy
+
+  # validation
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
+  validates_presence_of :name
+  validates_format_of :email, with: VALID_EMAIL_REGEX
+
+  # callbacks
+  before_save { self.email = email.downcase }
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
