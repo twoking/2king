@@ -1,0 +1,16 @@
+<ul>
+  <li><%= @restaurant.name %></li>
+  <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.phone_number %></li>
+  <li><%= @restaurant.latitude %></li>
+  <li><%= @restaurant.longitude %></li>
+  <li><%= @restaurant.price_level %></li>
+</ul>
+
+
+<%= form_for @restaurant, url: {action: "create"}, method: :post do |f| %>
+  <%= hidden_field_tag("restaurant[:name]", "#{@restaurant.name}") %>
+  <%= hidden_field_tag("restaurant[:address]", "#{@restaurant.address}") %>
+  <%= hidden_field_tag("restaurant[:place_id]", "#{@restaurant.place_id}") %>
+  <%= f.submit "Create" %>
+<% end  %>
