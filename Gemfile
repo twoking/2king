@@ -29,3 +29,9 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+group :test do
+  gem 'guard' # NOTE: this is necessary in newer versions
+  gem 'guard-minitest'
+  gem 'minitest-reporters'
+end
