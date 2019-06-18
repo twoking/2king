@@ -34,4 +34,5 @@ group :test do
   gem 'guard' # NOTE: this is necessary in newer versions
   gem 'guard-minitest'
   gem 'minitest-reporters'
+  gem 'rails-controller-testing'
 end
