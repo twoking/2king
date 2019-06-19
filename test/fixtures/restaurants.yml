@@ -3,7 +3,9 @@
 one:
   name: MyString
   address: MyString
-  phone: MyString
+  phone_number: MyString
+  website: MyString
+  place_id: MyString
   latitude: MyString
   longitude: MyString
   price_level: MyString
@@ -13,7 +15,9 @@ one:
 two:
   name: MyString
   address: MyString
-  phone: MyString
+  phone_number: MyString
+  website: MyString
+  place_id: MyString
   latitude: MyString
   longitude: MyString
   price_level: MyString
