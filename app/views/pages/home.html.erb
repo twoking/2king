@@ -1,4 +1,13 @@
 <% provide(:title, "Home") %>
+<% provide :head_tags do %>
+    <%= javascript_pack_tag 'map' %>
+<% end %>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="map">
+</div>
+
+<div class="container my-3">
+  <h1>Home</h1>
+</div>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_MAPS_API_KEY"]}" %>
