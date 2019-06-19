@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    byebug
     if Restaurant.find_by(place_id: params[:place_id])
       #add resto to favourite
     else
@@ -16,33 +17,12 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant
-    url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{params[:id]}&fields=address_component,adr_address,alt_id,formatted_address,geometry,icon,id,name,permanently_closed,photo,place_id,plus_code,scope,type,url,utc_offset,vicinity,formatted_phone_number,website,price_level,rating,review,user_ratings_total&key=#{ENV['GOOGLE_PLACES']}"
-    resto_serialized = open(url).read
-    restaurant = JSON.parse(resto_serialized)
-    @restaurant = Restaurant.new(
-      name: restaurant["result"]["name"],
-      address: restaurant["result"]["formatted_address"],
-      phone_number: restaurant["result"]["formatted_phone_number"],
-      place_id: restaurant["result"]["place_id"],
-      latitude: restaurant["result"]["geometry"]["location"]["lat"],
-      longitude: restaurant["result"]["geometry"]["location"]["lng"],
-      price_level: restaurant["result"]["price_level"]
-    )
-    photos_list = restaurant["result"]["photos"][0..3].map do |photo|
-      "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=#{photo["photo_reference"]}&key=#{ENV['GOOGLE_PLACES']}"
-    end
-    @restaurant.photos = photos_list
-  end
-
-  def search_restaurant
-    respond_to do |format|
-      format.js
-      format.html { redirect_to search_restaurant_path(@restaurants) }
-    end
+    @restaurant = Restaurant.find_by(place_id: params[:id])
+    @restaurant = Restaurant.api_search(params[:id]) unless @restaurant
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :phone_number, :place_id, :latitude, :longitude, :price_level)
+    params.require(:restaurant).permit(:name, :address, :phone_number, :place_id, :latitude, :longitude, :price_level, :website)
   end
 end
 
@@ -64,6 +44,14 @@ end
 #       total_rating: resto["user_ratings_total"]
 #     }
 #   end
+#   respond_to do |format|
+#     format.js
+#     format.html { redirect_to search_restaurant_path(@restaurants) }
+#   end
+# end
+
+
+# def search_restaurant
 #   respond_to do |format|
 #     format.js
 #     format.html { redirect_to search_restaurant_path(@restaurants) }

@@ -11,6 +11,7 @@
         <li><%= @restaurant.latitude %></li>
         <li><%= @restaurant.longitude %></li>
         <li><%= @restaurant.price_level %></li>
+        <li><%= @restaurant.website %></li>
       </ul>
     </div>
   </div>
@@ -21,8 +22,12 @@
 
 
 <%= form_for @restaurant, url: {action: "create"}, method: :post do |f| %>
-  <%= hidden_field_tag("restaurant[:name]", "#{@restaurant.name}") %>
-  <%= hidden_field_tag("restaurant[:address]", "#{@restaurant.address}") %>
-  <%= hidden_field_tag("restaurant[:place_id]", "#{@restaurant.place_id}") %>
-  <%= f.submit "Create" %>
+  <%= hidden_field_tag("restaurant[name]", "#{@restaurant.name}") %>
+  <%= hidden_field_tag("restaurant[address]", "#{@restaurant.address}") %>
+  <%= hidden_field_tag("restaurant[phone_number]", "#{@restaurant.phone_number}") %>
+  <%= hidden_field_tag("restaurant[latitude]", "#{@restaurant.latitude}") %>
+  <%= hidden_field_tag("restaurant[longitude]", "#{@restaurant.longitude}") %>
+  <%= hidden_field_tag("restaurant[website]", "#{@restaurant.website}") %>
+  <%= hidden_field_tag("restaurant[price_level]", "#{@restaurant.price_level}") %>
+  <%= f.submit "CreateRestaurant" %>
 <% end  %>

@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_050939) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
+    t.string "website"
     t.float "latitude"
     t.float "longitude"
     t.string "place_id"
