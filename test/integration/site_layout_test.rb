@@ -9,5 +9,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     get root_path
     assert_template 'pages/home'
     assert_select "a[href=?]", root_path, count: 1
+    assert_select "title", full_title("Home")
   end
 end
