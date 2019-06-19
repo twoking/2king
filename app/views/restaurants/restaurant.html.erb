@@ -1,11 +1,23 @@
-<ul>
-  <li><%= @restaurant.name %></li>
-  <li><%= @restaurant.address %></li>
-  <li><%= @restaurant.phone_number %></li>
-  <li><%= @restaurant.latitude %></li>
-  <li><%= @restaurant.longitude %></li>
-  <li><%= @restaurant.price_level %></li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <%= render "photo_carousel", photos: @restaurant.photos %>
+      </div>
+      <ul>
+        <li><%= @restaurant.name %></li>
+        <li><%= @restaurant.address %></li>
+        <li><%= @restaurant.phone_number %></li>
+        <li><%= @restaurant.latitude %></li>
+        <li><%= @restaurant.longitude %></li>
+        <li><%= @restaurant.price_level %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<a onclick="history.back()"><i class="fas fa-caret-left"></i>Bckkkk</a>
 
 
 <%= form_for @restaurant, url: {action: "create"}, method: :post do |f| %>
