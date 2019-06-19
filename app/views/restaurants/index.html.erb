@@ -1,0 +1,13 @@
+<div class="container">
+  <input class="form-control" placeholder="Search a restaurant" id="search_restaurant" type="text", name="restaurant" style="width: 100%">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 id ="search-title">Restaurants NearBy</h3>
+        <div id="search-results">
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}&libraries=places" %>
+

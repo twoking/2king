@@ -10,5 +10,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Home | #{@base_title}"
   end
-
 end

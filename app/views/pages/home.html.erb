@@ -8,6 +8,7 @@
 
 <div class="container my-3">
   <h1>Home</h1>
+  <%= link_to "Search Restaurants", restaurants_path %>
 </div>
 
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_MAPS_API_KEY"]}" %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}" %>
