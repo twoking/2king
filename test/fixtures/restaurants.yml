@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  phone_number: MyString
-  website: MyString
-  place_id: MyString
-  latitude: MyString
-  longitude: MyString
-  price_level: MyString
-  photos: MyString
-  opening_hours: MyString
-
-two:
-  name: MyString
-  address: MyString
-  phone_number: MyString
-  website: MyString
-  place_id: MyString
-  latitude: MyString
-  longitude: MyString
-  price_level: MyString
-  photos: MyString
-  opening_hours: MyString
+# one:
+#   name: MyString
+#   address: MyString
+#   phone_number: MyString
+#   website: MyString
+#   place_id: MyString
+#   latitude: 1
+#   longitude: 1
+#   price_level: MyString
+#   photos: []
+#   opening_hours: MyString
+#
+# two:
+#   name: MyString
+#   address: MyString
+#   phone_number: MyString
+#   website: MyString
+#   place_id: MyString
+#   latitude: 1
+#   longitude: 1
+#   price_level: MyString
+#   photos: []
+#   opening_hours: MyString
