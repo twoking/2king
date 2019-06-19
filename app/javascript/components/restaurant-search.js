@@ -2,6 +2,7 @@ import { appendRestaurant } from "./append-restaurant.js"
 import haversine from "haversine"
 
 
+
 const searchRestaurant = () => {
   const input = document.querySelector("#search_restaurant")
   const autocomplete = new google.maps.places.Autocomplete(input,{ types: ['establishment']});
