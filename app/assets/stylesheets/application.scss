@@ -10,15 +10,4 @@
 @import "components/index";
 @import "pages/index";
 
-.restaurant-show-pic {
-  width: 100%;
-  height: 38vh;
-}
 
-.carousel-item {
-  height: 30vh;
-  img {
-    object-fit: cover !important;
-    height: 100%;
-  }
-}

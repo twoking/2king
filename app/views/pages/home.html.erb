@@ -1,5 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% provide(:title, "Home") %>
+<% provide :head_tags do %>
+    <%= javascript_pack_tag 'map' %>
+<% end %>
 
+<div id="map">
+</div>
 
-<%= link_to "Search Restaurants", restaurants_path %>
+<div class="container my-3">
+  <h1>Home</h1>
+  <%= link_to "Search Restaurants", restaurants_path %>
+</div>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}" %>

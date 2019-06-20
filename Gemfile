@@ -15,6 +15,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -26,4 +27,11 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'guard' # NOTE: this is necessary in newer versions
+  gem 'guard-minitest'
+  gem 'minitest-reporters'
+  gem 'rails-controller-testing'
 end

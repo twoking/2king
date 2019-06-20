@@ -26,6 +26,12 @@
 .DS_Store
 .env
 
+# Ignore spring folders
+/spring/*.pid
+
+# Ignore credentials file, cos we're using .env instead
+/config/credentials*
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
