@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :followings, through: :friendships, source: :followed
   has_many :followers, through: :passive_friendships, source: :follower
 
+  has_many :lists
+  has_many :restaurants, through: :lists
+
   # validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
@@ -54,6 +57,42 @@ class User < ApplicationRecord
     combined_followings << second_degree_followings
     combined_followings << second_degree_followings.map(&:followings)
     combined_followings.flatten.uniq - [self]
+  end
+
+  def add_restaurant(a_restaurant)
+    restaurants << a_restaurant
+  end
+
+  def remove_restaurant(a_restaurant)
+    self.restaurants -= [a_restaurant]
+  end
+
+  def friends_restaurants
+    followings.map(&:restaurants).flatten.uniq
+  end
+
+  def mine_and_friends_restaurants
+    self.restaurants + friends_restaurants
+  end
+
+  def second_degree_friends_restos
+    second_degree_followings.map(&:restaurants).flatten.uniq
+  end
+
+  def mine_and_second_degree_friends_restos
+    self.restaurants + second_degree_friends_restos
+  end
+
+  def first_and_second_degree_friends_restos
+    friends_restaurants + second_degree_friends_restos
+  end
+
+  def third_degree_friends_restos
+    third_degree_followings.map(&:restaurants).flatten.uniq
+  end
+
+  def all_degrees_friends_restos
+    first_and_second_degree_friends_restos + third_degree_friends_restos
   end
 
   # class methods
