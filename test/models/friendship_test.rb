@@ -93,7 +93,7 @@ class FriendshipTest < ActiveSupport::TestCase
     assert_not @michael.third_degree_followings.include? @michael
   end
 
-  test "should let user see first degree friends restaurant_list ONLY" do
+  test "should let user see first degree friends restaurant_list" do
     @michael.follow @archer
     @michael.follow @lana
 
@@ -103,8 +103,22 @@ class FriendshipTest < ActiveSupport::TestCase
     @archer.add_restaurant(resto_1)
     @lana.add_restaurant(resto_2)
 
-    assert @michael.friends_restaurants.include? resto_1
-    assert @michael.friends_restaurants.include? resto_2
+    assert @michael.restaurants_filter(degrees: [1]).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1]).include? resto_2
+  end
+
+  test "should let user see first degree friends restaurant_list and own restaurants" do
+    @michael.follow @archer
+    @michael.follow @lana
+
+    resto_1 = restaurants(:resto_1)
+    resto_2 = restaurants(:resto_2)
+
+    @archer.add_restaurant(resto_1)
+    @michael.add_restaurant(resto_2)
+
+    assert @michael.restaurants_filter(degrees: [1], with_own_list: true).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1], with_own_list: true).include? resto_2
   end
 
   test "should let user see second degree friends restaurant_list ONLY" do
@@ -115,7 +129,38 @@ class FriendshipTest < ActiveSupport::TestCase
 
     @lana.add_restaurant(resto_1)
 
-    assert @michael.second_degree_friends_restos.include? resto_1
+    assert @michael.restaurants_filter(degrees: [2]).include? resto_1
+  end
+
+  test "should let user see first & second degree friends restaurant_list ONLY" do
+    @michael.follow @archer
+    @archer.follow @lana
+
+    resto_1 = restaurants(:resto_1)
+    resto_2 = restaurants(:resto_2)
+
+    @archer.add_restaurant(resto_2)
+    @lana.add_restaurant(resto_1)
+
+    assert @michael.restaurants_filter(degrees: [1, 2]).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1, 2]).include? resto_2
+  end
+
+  test "should let user see first & second degree friends restaurant_list and own restaurants" do
+    @michael.follow @archer
+    @archer.follow @lana
+
+    resto_1 = restaurants(:resto_1)
+    resto_2 = restaurants(:resto_2)
+    resto_3 = restaurants(:resto_3)
+
+    @archer.add_restaurant(resto_2)
+    @lana.add_restaurant(resto_1)
+    @michael.add_restaurant(resto_3)
+
+    assert @michael.restaurants_filter(degrees: [1, 2], with_own_list: true).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1, 2], with_own_list: true).include? resto_2
+    assert @michael.restaurants_filter(degrees: [1, 2], with_own_list: true).include? resto_3
   end
 
   test "should let user see third degree friends restaurant_list ONLY" do
@@ -127,33 +172,73 @@ class FriendshipTest < ActiveSupport::TestCase
 
     @malory.add_restaurant(resto_1)
 
-    assert @michael.third_degree_friends_restos.include? resto_1
+    assert @michael.restaurants_filter(degrees: [3]).include? resto_1
   end
 
-  test "should let user see their list + friends restaurant_list" do
-    @michael.follow @archer
-
-    resto_1 = restaurants(:resto_1)
-    resto_2 = restaurants(:resto_2)
-
-    @michael.add_restaurant(resto_1)
-    @archer.add_restaurant(resto_2)
-
-    assert @michael.mine_and_friends_restaurants.include? resto_1
-    assert @michael.mine_and_friends_restaurants.include? resto_2
-  end
-
-  test "should let user see their list + friends restaurant_list" do
+  test "should let user see first & third degree friends restaurant_list ONLY" do
     @michael.follow @archer
     @archer.follow @lana
+    @lana.follow @malory
 
     resto_1 = restaurants(:resto_1)
     resto_2 = restaurants(:resto_2)
 
-    @michael.add_restaurant(resto_1)
-    @lana.add_restaurant(resto_2)
+    @archer.add_restaurant(resto_1)
+    @malory.add_restaurant(resto_2)
 
-    assert @michael.mine_and_friends_restaurants.include? resto_1
-    assert @michael.mine_and_friends_restaurants.include? resto_2
+    assert @michael.restaurants_filter(degrees: [1, 3]).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1, 3]).include? resto_2
+  end
+
+  test "should let user see second & third degree friends restaurant_list ONLY" do
+    @michael.follow @archer
+    @archer.follow @lana
+    @lana.follow @malory
+
+    resto_1 = restaurants(:resto_1)
+    resto_2 = restaurants(:resto_2)
+
+    @lana.add_restaurant(resto_1)
+    @malory.add_restaurant(resto_2)
+
+    assert @michael.restaurants_filter(degrees: [2, 3]).include? resto_1
+    assert @michael.restaurants_filter(degrees: [2, 3]).include? resto_2
+  end
+
+  test "should let user see all degrees' friends restaurant_list ONLY" do
+    @michael.follow @archer
+    @archer.follow @lana
+    @lana.follow @malory
+
+    resto_1 = restaurants(:resto_1)
+    resto_2 = restaurants(:resto_2)
+    resto_3 = restaurants(:resto_3)
+
+    @archer.add_restaurant(resto_1)
+    @lana.add_restaurant(resto_2)
+    @malory.add_restaurant(resto_3)
+
+    assert @michael.restaurants_filter(degrees: [1, 2, 3]).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1, 2, 3]).include? resto_2
+  end
+
+  test "should let user see all degrees' friends restaurant_list and own restaurant" do
+    @michael.follow @archer
+    @archer.follow @lana
+    @lana.follow @malory
+
+    resto_1 = restaurants(:resto_1)
+    resto_2 = restaurants(:resto_2)
+    resto_3 = restaurants(:resto_3)
+    resto_4 = restaurants(:resto_4)
+
+
+    @archer.add_restaurant(resto_1)
+    @lana.add_restaurant(resto_2)
+    @malory.add_restaurant(resto_3)
+    @michael.add_restaurant(resto_4)
+
+    assert @michael.restaurants_filter(degrees: [1, 2, 3], with_own_list: true).include? resto_1
+    assert @michael.restaurants_filter(degrees: [1, 2, 3], with_own_list: true).include? resto_2
   end
 end

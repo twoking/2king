@@ -1,6 +1,7 @@
 <% provide(:title, "Home") %>
 <% provide :head_tags do %>
-    <%= javascript_pack_tag 'map' %>
+  <meta name='turbolinks-visit-control' content='reload'>
+  <%= javascript_pack_tag 'map' %>
 <% end %>
 
 <div id="map">

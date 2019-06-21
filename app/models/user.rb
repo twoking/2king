@@ -71,28 +71,30 @@ class User < ApplicationRecord
     followings.map(&:restaurants).flatten.uniq
   end
 
-  def mine_and_friends_restaurants
-    self.restaurants + friends_restaurants
-  end
-
   def second_degree_friends_restos
     second_degree_followings.map(&:restaurants).flatten.uniq
-  end
-
-  def mine_and_second_degree_friends_restos
-    self.restaurants + second_degree_friends_restos
-  end
-
-  def first_and_second_degree_friends_restos
-    friends_restaurants + second_degree_friends_restos
   end
 
   def third_degree_friends_restos
     third_degree_followings.map(&:restaurants).flatten.uniq
   end
 
-  def all_degrees_friends_restos
-    first_and_second_degree_friends_restos + third_degree_friends_restos
+  def restaurants_filter(options = {})
+    restaurants_arr = options[:with_own_list] ? [self.restaurants] : []
+
+    filter_map = {
+      1 => lambda { friends_restaurants },
+      2 => lambda { second_degree_friends_restos },
+      3 => lambda { third_degree_friends_restos }
+    }
+
+    unless options[:degrees].nil?
+      options[:degrees].each do |degree|
+        restaurants_arr << filter_map[degree].call
+      end
+    end
+
+    restaurants_arr.flatten.uniq
   end
 
   # class methods
