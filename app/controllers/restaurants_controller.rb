@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
     if Restaurant.find_by(place_id: @restaurant.place_id)
       #add resto to favourite
     else
-      byebug
+      #byebug
       @restaurant.save
       #add resto to favourite
     end
