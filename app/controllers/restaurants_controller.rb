@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
     @restaurant.photos = params[:restaurant][:photos]
     @restaurant.opening_hours = params[:restaurant][:opening_hours].split("<")
     @restaurant.save unless Restaurant.find_by(place_id: @restaurant.place_id)
-    current_user.add_restaurant_to_list(@restaurant)
+    current_user.add_restaurant(@restaurant)
     @list = List.find_by(user: current_user, restaurant: @restaurant)
     respond_to do |format|
       format.js
