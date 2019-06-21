@@ -28,7 +28,6 @@ const getCurrentLocation = (callback) => {
       callback(newPosition)
     });
   } else {
-    console.log("klòkkòkl");
     throw new Error("Your browser does not support geolocation.");
   }
 }

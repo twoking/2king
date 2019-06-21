@@ -1,10 +1,8 @@
 import haversine from "haversine"
 
 const restaurantCard = (resto) => {
-  console.log("card");
   const openNow = ""
   let distance = new Number;
-  console.log(resto);
   const priceRange = resto.price_level ? "$".repeat(resto.price_level) : ""
   if (resto.opening_hours){
     const openNow = resto.opening_hours.open_now ? "OPEN" :  "CLOSED"

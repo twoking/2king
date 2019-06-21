@@ -95,10 +95,6 @@ class User < ApplicationRecord
     first_and_second_degree_friends_restos + third_degree_friends_restos
   end
 
-  def add_restaurant_to_list(restaurant)
-    List.create(user: self, restaurant: restaurant)
-  end
-
   # class methods
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
