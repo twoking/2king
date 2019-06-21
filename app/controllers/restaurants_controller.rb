@@ -7,10 +7,13 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.photos = params[:restaurant][:photos]
+    @restaurant.opening_hours = params[:restaurant][:opening_hours]
     byebug
-    if Restaurant.find_by(place_id: params[:place_id])
+    if Restaurant.find_by(place_id: @restaurant.place_id)
       #add resto to favourite
     else
+      #byebug
       @restaurant.save
       #add resto to favourite
     end
@@ -22,7 +25,7 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :phone_number, :place_id, :latitude, :longitude, :price_level, :website)
+    params.require(:restaurant).permit(:name, :address, :phone_number, :place_id, :latitude, :longitude, :price_level, :place_id, :website)
   end
 end
 

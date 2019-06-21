@@ -12,6 +12,17 @@
         <li><%= @restaurant.longitude %></li>
         <li><%= @restaurant.price_level %></li>
         <li><%= @restaurant.website %></li>
+        <% if @restaurant.open_now? %>
+          <p>OPEN</p>
+        <% else %>
+          <p>CLOSE</p>
+        <% end  %>
+        <li>Opening Hours</li>
+          <ul>
+            <% @restaurant.opening_hours.each do |daytime| %>
+              <li><%= daytime %></li>
+            <% end %>
+          </ul>
       </ul>
     </div>
   </div>
@@ -28,6 +39,8 @@
   <%= hidden_field_tag("restaurant[latitude]", "#{@restaurant.latitude}") %>
   <%= hidden_field_tag("restaurant[longitude]", "#{@restaurant.longitude}") %>
   <%= hidden_field_tag("restaurant[website]", "#{@restaurant.website}") %>
-  <%= hidden_field_tag("restaurant[price_level]", "#{@restaurant.price_level}") %>
+  <%= hidden_field_tag("restaurant[place_id]", "#{@restaurant.place_id}") %>
+  <%= hidden_field_tag("restaurant[photos]", "#{@restaurant.photos}") %>
+  <%= hidden_field_tag("restaurant[opening_hours]", "#{@restaurant.opening_hours.join("<")}") %>
   <%= f.submit "CreateRestaurant" %>
 <% end  %>
