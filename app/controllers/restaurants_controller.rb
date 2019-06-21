@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.photos = params[:restaurant][:photos]
-    @restaurant.opening_hours = @restaurant.opening_hours = params[:restaurant][:opening_hours].split("<")
+    @restaurant.opening_hours = params[:restaurant][:opening_hours].split("<")
     @restaurant.save unless Restaurant.find_by(place_id: @restaurant.place_id)
     current_user.add_restaurant_to_list(@restaurant)
     @list = List.find_by(user: current_user, restaurant: @restaurant)
