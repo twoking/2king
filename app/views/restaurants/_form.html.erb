@@ -1,0 +1,12 @@
+<%= form_for restaurant, url: {action: "create"}, method: :post, remote: true do |f| %>
+  <%= hidden_field_tag("restaurant[name]", "#{restaurant.name}") %>
+  <%= hidden_field_tag("restaurant[address]", "#{restaurant.address}") %>
+  <%= hidden_field_tag("restaurant[phone_number]", "#{restaurant.phone_number}") %>
+  <%= hidden_field_tag("restaurant[latitude]", "#{restaurant.latitude}") %>
+  <%= hidden_field_tag("restaurant[longitude]", "#{restaurant.longitude}") %>
+  <%= hidden_field_tag("restaurant[website]", "#{restaurant.website}") %>
+  <%= hidden_field_tag("restaurant[place_id]", "#{restaurant.place_id}") %>
+  <%= hidden_field_tag("restaurant[photos]", "#{restaurant.photos}") %>
+  <%= hidden_field_tag("restaurant[opening_hours]", "#{restaurant.opening_hours.join("<")}") %>
+  <%= f.submit "Add restaurant to your list" %>
+<% end  %>
