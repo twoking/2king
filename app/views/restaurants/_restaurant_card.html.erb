@@ -1,0 +1,9 @@
+<a class="mx-2 restaurant-card-link" href="/restaurants/<%= resto.place_id %>"><div class="card-product">
+  <img src="<%= resto.photos.first %>">
+  <div class="card-product-infos">
+    <h2><%= resto.name %></h2>
+    <p><%= resto.price_level %></p>
+    <p><%= resto.address %></p>
+    <p><%= resto.open_now? ? "OPEN" : "CLOSE" %></p>
+  </div>
+</div>
