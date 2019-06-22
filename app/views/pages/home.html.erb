@@ -23,7 +23,33 @@
 </div>
 
 <div class="container my-3 main-panel" style="display: none;">
-  <h1>Restaurant List</h1>
+  <h3>Restaurant</h3>
+  <p>Show results based on:</p>
+  <hr>
+  <div class="form-check">
+    <input class="form-check-input user-filter" type="checkbox" value="true" id="user-list" checked>
+    <label class="form-check-label" for="user-list">
+      My List
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input restaurant-filter" type="checkbox" value="1" id="first-degree">
+    <label class="form-check-label" for="first-degree">
+      1st Degree Connections
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input restaurant-filter" type="checkbox" value="2" id="second-degree">
+    <label class="form-check-label" for="second-degree">
+      2nd Degree Connections
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input restaurant-filter" type="checkbox" value="3" id="third-degree">
+    <label class="form-check-label" for="third-degree">
+      3rd Degree Connections
+    </label>
+  </div>
 </div>
 
 <div class="d-flex fixed-bottom">

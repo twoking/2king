@@ -16,4 +16,26 @@ panelToggler.on('click', function(e) {
   mainPanel.toggle();
 });
 
+const restaurantFilter = $('.restaurant-filter');
+
+restaurantFilter.on('change', function(e) {
+  const degreesFilter = [];
+  const ownList = true;
+  $.each($(".restaurant-filter:checked"), function(){
+    degreesFilter.push($(this).val());
+  });
+
+  console.log(degreesFilter);
+  console.log(ownList);
+
+  const payload = {
+    degreesFilter,
+    ownList
+  }
+
+  $.get('/restaurants-filter', payload, function(data) {
+    console.log('success');
+  });
+});
+
 

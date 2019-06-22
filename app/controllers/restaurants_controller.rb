@@ -24,6 +24,16 @@ class RestaurantsController < ApplicationController
     @list = @restaurant.user_list(current_user) if @restaurant.id
   end
 
+  def filter
+    degreesFilter = params[:degreesFilter].nil? ? [] : params[:degreesFilter]
+    userFilter = params[:ownList] == "true"
+
+    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter).map { |resto| [resto.latitude, resto.longitude] }
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :phone_number, :place_id, :latitude, :longitude, :price_level, :place_id, :website)
   end

@@ -83,9 +83,9 @@ class User < ApplicationRecord
     restaurants_arr = options[:with_own_list] ? [self.restaurants] : []
 
     filter_map = {
-      1 => lambda { friends_restaurants },
-      2 => lambda { second_degree_friends_restos },
-      3 => lambda { third_degree_friends_restos }
+      "1" => lambda { friends_restaurants },
+      "2" => lambda { second_degree_friends_restos },
+      "3" => lambda { third_degree_friends_restos }
     }
 
     unless options[:degrees].nil?
