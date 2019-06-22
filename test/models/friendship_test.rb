@@ -142,8 +142,8 @@ class FriendshipTest < ActiveSupport::TestCase
     @archer.add_restaurant(resto_2)
     @lana.add_restaurant(resto_1)
 
-    assert @michael.restaurants_filter(degrees: ["1, 2"]).include? resto_1
-    assert @michael.restaurants_filter(degrees: ["1, 2"]).include? resto_2
+    assert @michael.restaurants_filter(degrees: ["1", "2"]).include? resto_1
+    assert @michael.restaurants_filter(degrees: ["1", "2"]).include? resto_2
   end
 
   test "should let user see first & second degree friends restaurant_list and own restaurants" do
@@ -158,9 +158,9 @@ class FriendshipTest < ActiveSupport::TestCase
     @lana.add_restaurant(resto_1)
     @michael.add_restaurant(resto_3)
 
-    assert @michael.restaurants_filter(degrees: ["1, 2"], with_own_list: true).include? resto_1
-    assert @michael.restaurants_filter(degrees: ["1, 2"], with_own_list: true).include? resto_2
-    assert @michael.restaurants_filter(degrees: ["1, 2"], with_own_list: true).include? resto_3
+    assert @michael.restaurants_filter(degrees: ["1", "2"], with_own_list: true).include? resto_1
+    assert @michael.restaurants_filter(degrees: ["1", "2"], with_own_list: true).include? resto_2
+    assert @michael.restaurants_filter(degrees: ["1", "2"], with_own_list: true).include? resto_3
   end
 
   test "should let user see third degree friends restaurant_list ONLY" do
@@ -186,8 +186,8 @@ class FriendshipTest < ActiveSupport::TestCase
     @archer.add_restaurant(resto_1)
     @malory.add_restaurant(resto_2)
 
-    assert @michael.restaurants_filter(degrees: ["1, 3"]).include? resto_1
-    assert @michael.restaurants_filter(degrees: ["1, 3"]).include? resto_2
+    assert @michael.restaurants_filter(degrees: ["1", "3"]).include? resto_1
+    assert @michael.restaurants_filter(degrees: ["1", "3"]).include? resto_2
   end
 
   test "should let user see second & third degree friends restaurant_list ONLY" do
@@ -201,8 +201,8 @@ class FriendshipTest < ActiveSupport::TestCase
     @lana.add_restaurant(resto_1)
     @malory.add_restaurant(resto_2)
 
-    assert @michael.restaurants_filter(degrees: ["2, 3"]).include? resto_1
-    assert @michael.restaurants_filter(degrees: ["2, 3"]).include? resto_2
+    assert @michael.restaurants_filter(degrees: ["2", "3"]).include? resto_1
+    assert @michael.restaurants_filter(degrees: ["2", "3"]).include? resto_2
   end
 
   test "should let user see all degrees' friends restaurant_list ONLY" do
@@ -218,8 +218,8 @@ class FriendshipTest < ActiveSupport::TestCase
     @lana.add_restaurant(resto_2)
     @malory.add_restaurant(resto_3)
 
-    assert @michael.restaurants_filter(degrees: ["1, 2, 3"]).include? resto_1
-    assert @michael.restaurants_filter(degrees: ["1, 2, 3"]).include? resto_2
+    assert @michael.restaurants_filter(degrees: ["1", "2", "3"]).include? resto_1
+    assert @michael.restaurants_filter(degrees: ["1", "2", "3"]).include? resto_2
   end
 
   test "should let user see all degrees' friends restaurant_list and own restaurant" do
@@ -238,7 +238,7 @@ class FriendshipTest < ActiveSupport::TestCase
     @malory.add_restaurant(resto_3)
     @michael.add_restaurant(resto_4)
 
-    assert @michael.restaurants_filter(degrees: ["1, 2, 3"], with_own_list: true).include? resto_1
-    assert @michael.restaurants_filter(degrees: ["1, 2, 3"], with_own_list: true).include? resto_2
+    assert @michael.restaurants_filter(degrees: ["1", "2", "3"], with_own_list: true).include? resto_1
+    assert @michael.restaurants_filter(degrees: ["1", "2", "3"], with_own_list: true).include? resto_2
   end
 end
