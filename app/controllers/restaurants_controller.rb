@@ -26,11 +26,13 @@ class RestaurantsController < ApplicationController
 
   def filter
     degreesFilter = params[:degreesFilter].nil? ? [] : params[:degreesFilter]
-    userFilter = params[:ownList] == "true"
+    # if params[:ownList] is nil? assumed that user is viewing restos in his/her list too
+    userFilter = params[:ownList] == "true" || params[:ownList].nil?
 
-    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter).map { |resto| [resto.latitude, resto.longitude] }
+    # need to refactor this as helper method instead perhaps
+    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter).map { |resto| [resto.latitude, resto.longitude, resto.name] }
     respond_to do |format|
-      format.js
+      format.json { render json: @filtered_restaurants }
     end
   end
 

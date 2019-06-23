@@ -44,5 +44,8 @@ const initMap = (lat, lng, zoom = 15) => {
   }
 }
 
+const initPlugin = () => {
+  domLoaded();
+}
 
-document.addEventListener("DOMContentLoaded", domLoaded);
+export { initPlugin, map }

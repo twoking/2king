@@ -1,8 +1,4 @@
 <% provide(:title, "Home") %>
-<% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'>
-  <%= javascript_pack_tag 'map' %>
-<% end %>
 
 <div id="map">
 </div>
@@ -27,7 +23,7 @@
   <p>Show results based on:</p>
   <hr>
   <div class="form-check">
-    <input class="form-check-input user-filter" type="checkbox" value="true" id="user-list" checked>
+    <input class="form-check-input user-filter" type="checkbox" id="user-list" checked>
     <label class="form-check-label" for="user-list">
       My List
     </label>

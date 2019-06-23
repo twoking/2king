@@ -46,7 +46,6 @@ class FriendshipTest < ActiveSupport::TestCase
   test "should let user sees his/her second degree friends" do
     @michael.follow @archer
     @archer.follow @lana
-    assert @michael.second_degree_followings.include? @archer
     assert @michael.second_degree_followings.include? @lana
   end
 
@@ -69,8 +68,6 @@ class FriendshipTest < ActiveSupport::TestCase
     @michael.follow @archer
     @archer.follow @lana
     @lana.follow @malory
-    assert @michael.third_degree_followings.include? @archer
-    assert @michael.third_degree_followings.include? @lana
     assert @michael.third_degree_followings.include? @malory
   end
 

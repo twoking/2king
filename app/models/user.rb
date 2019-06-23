@@ -45,16 +45,18 @@ class User < ApplicationRecord
     followers.include?(another_user)
   end
 
+  # refactor: 23 June, assumed only shown friends per degree. if not
+  # it will affect which restos to be shown
   def second_degree_followings
     combined_followings = []
-    combined_followings << followings
+    # combined_followings << followings
     combined_followings << followings.map(&:followings)
     combined_followings.flatten.uniq - [self]
   end
 
   def third_degree_followings
     combined_followings = []
-    combined_followings << second_degree_followings
+    # combined_followings << second_degree_followings
     combined_followings << second_degree_followings.map(&:followings)
     combined_followings.flatten.uniq - [self]
   end
