@@ -2,6 +2,8 @@ require 'json'
 require 'open-uri'
 
 class RestaurantsController < ApplicationController
+  include RestaurantsHelper
+
   def index
   end
 
@@ -26,13 +28,12 @@ class RestaurantsController < ApplicationController
 
   def filter
     degreesFilter = params[:degreesFilter].nil? ? [] : params[:degreesFilter]
-    # if params[:ownList] is nil? assumed that user is viewing restos in his/her list too
-    userFilter = params[:ownList] == "true" || params[:ownList].nil?
+    userFilter = params[:ownList].nil? ? [] : params[:ownList] == "true"
 
-    # need to refactor this as helper method instead perhaps
-    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter).map { |resto| [resto.latitude, resto.longitude, resto.name] }
+    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter)
+
     respond_to do |format|
-      format.json { render json: @filtered_restaurants }
+      format.json { render json: location_mapper(@filtered_restaurants) }
     end
   end
 

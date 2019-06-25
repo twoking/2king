@@ -11,7 +11,7 @@ class Restaurant < ApplicationRecord
     (morning_opening..evening_close).include?(Time.now.hour)
   end
 
-#List ID based on current_user and restaurant
+  #List ID based on current_user and restaurant
   def user_list(user)
     List.find_by(restaurant: self, user: user)
   end

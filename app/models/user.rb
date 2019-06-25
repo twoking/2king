@@ -82,6 +82,8 @@ class User < ApplicationRecord
   end
 
   def restaurants_filter(options = {})
+    return [] if options.empty?
+
     restaurants_arr = options[:with_own_list] ? [self.restaurants] : []
 
     filter_map = {
