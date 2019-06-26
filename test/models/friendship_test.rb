@@ -7,7 +7,7 @@ class FriendshipTest < ActiveSupport::TestCase
     @michael  = users(:michael)
     @archer   = users(:archer)
     @lana     = users(:lana)
-    @malory   = users(:malory  )
+    @malory   = users(:malory)
   end
 
   test "should be valid" do
@@ -46,8 +46,8 @@ class FriendshipTest < ActiveSupport::TestCase
   test "should let user sees his/her second degree friends" do
     @michael.follow @archer
     @archer.follow @lana
-    assert @michael.second_degree_followings.include? @archer
     assert @michael.second_degree_followings.include? @lana
+    assert_not @michael.third_degree_followings.include? @archer
   end
 
   test "user friend should recur once in the second degree list" do
@@ -69,9 +69,9 @@ class FriendshipTest < ActiveSupport::TestCase
     @michael.follow @archer
     @archer.follow @lana
     @lana.follow @malory
-    assert @michael.third_degree_followings.include? @archer
-    assert @michael.third_degree_followings.include? @lana
     assert @michael.third_degree_followings.include? @malory
+    assert_not @michael.third_degree_followings.include? @lana
+    assert_not @michael.third_degree_followings.include? @archer
   end
 
   test "user friend should recur once in the third degree list" do

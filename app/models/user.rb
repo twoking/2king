@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :followings, through: :friendships, source: :followed
   has_many :followers, through: :passive_friendships, source: :follower
 
+  has_many :lists
+  has_many :restaurants, through: :lists
+
   # validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
@@ -42,18 +45,60 @@ class User < ApplicationRecord
     followers.include?(another_user)
   end
 
+  # refactor: 23 June, assumed only shown friends per degree. if not
+  # it will affect which restos to be shown
   def second_degree_followings
     combined_followings = []
-    combined_followings << followings
+    # combined_followings << followings
     combined_followings << followings.map(&:followings)
     combined_followings.flatten.uniq - [self]
   end
 
   def third_degree_followings
     combined_followings = []
-    combined_followings << second_degree_followings
+    # combined_followings << second_degree_followings
     combined_followings << second_degree_followings.map(&:followings)
     combined_followings.flatten.uniq - [self]
+  end
+
+  def add_restaurant(a_restaurant)
+    restaurants << a_restaurant
+  end
+
+  def remove_restaurant(a_restaurant)
+    self.restaurants -= [a_restaurant]
+  end
+
+  def friends_restaurants
+    followings.map(&:restaurants).flatten.uniq
+  end
+
+  def second_degree_friends_restos
+    second_degree_followings.map(&:restaurants).flatten.uniq
+  end
+
+  def third_degree_friends_restos
+    third_degree_followings.map(&:restaurants).flatten.uniq
+  end
+
+  def restaurants_filter(options = {})
+    return [] if options.empty?
+
+    restaurants_arr = options[:with_own_list] ? [self.restaurants] : []
+
+    filter_map = {
+      "1" => lambda { friends_restaurants },
+      "2" => lambda { second_degree_friends_restos },
+      "3" => lambda { third_degree_friends_restos }
+    }
+
+    unless options[:degrees].nil?
+      options[:degrees].each do |degree|
+        restaurants_arr << filter_map[degree].call
+      end
+    end
+
+    restaurants_arr.flatten.uniq
   end
 
   # class methods

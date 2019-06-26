@@ -1,0 +1,4 @@
+<%= form_for List.new, remote: true do %>
+  <%= hidden_field_tag 'restaurant_id', @restaurant.id %>
+  <%= submit_tag 'Add restaurant to your list', class: 'btn btn-primary' %>
+<% end %>

@@ -1,25 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   name: MyString
-#   address: MyString
-#   phone_number: MyString
-#   website: MyString
-#   place_id: MyString
-#   latitude: 1
-#   longitude: 1
-#   price_level: MyString
-#   photos: []
-#   opening_hours: MyString
-#
-# two:
-#   name: MyString
-#   address: MyString
-#   phone_number: MyString
-#   website: MyString
-#   place_id: MyString
-#   latitude: 1
-#   longitude: 1
-#   price_level: MyString
-#   photos: []
-#   opening_hours: MyString
+<% 5.times do |n| %>
+resto_<%= n %>:
+  name: <%= Faker::Restaurant.name %>
+  address: <%= Faker::Address.full_address %>
+  phone_number: <%= Faker::PhoneNumber.phone_number %>,
+  latitude: <%= rand(-90.0..90.0).round(3) %>,
+  longitude: <%= rand(-180.0..180.0).round(3) %>
+<% end %>

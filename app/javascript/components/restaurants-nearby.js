@@ -15,10 +15,12 @@ const getCurrentLocation = (callback) => {
         distance = haversine(start, end)
         localStorage.setItem('lat', `${position.coords.latitude}`);
         localStorage.setItem('lng', `${position.coords.longitude}`);
-        console.log(distance);
+      } else {
+        localStorage.setItem('lat', `${position.coords.latitude}`);
+        localStorage.setItem('lng', `${position.coords.longitude}`);
+        newPosition = true
       }
       if (distance > 0.5 ){
-        console.log("new position");
         localStorage.setItem('lat', `${position.coords.latitude}`);
         localStorage.setItem('lng', `${position.coords.longitude}`);
         newPosition = true
@@ -84,7 +86,6 @@ const listRestaurants = () => {
       console.log("New Search");
       getRestaurantsNearBy(lat, lng)
     }
-
   });
 }
 
