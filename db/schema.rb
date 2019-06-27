@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_081410) do
+ActiveRecord::Schema.define(version: 2019_06_27_020528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2019_06_19_081410) do
     t.index ["followed_id"], name: "index_friendships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_friendships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_friendships_on_follower_id"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "token"
+    t.boolean "expired", default: false
+    t.integer "count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_links_on_user_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -68,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_081410) do
     t.index ["uid"], name: "index_users_on_uid", unique: true
   end
 
+  add_foreign_key "links", "users"
   add_foreign_key "lists", "restaurants"
   add_foreign_key "lists", "users"
 end

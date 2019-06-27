@@ -1,0 +1,17 @@
+
+
+<h1>Here arethe favourite restaurants of <%= @user.name %></h1>
+
+<% if user_signed_in? %>
+  <%= form_tag users_follow_path(@user) do  %>
+   <%= submit_tag "Add #{@user.name.split(" ").first} to your Friends" %>
+  <% end %>
+<% else %>
+  <%= link_to "Add #{@user.name.split(" ").first} to your Friends", user_facebook_omniauth_authorize_path, class: "nav-link", method: :post %><%=  %>
+<% end %>
+
+<div class="container my-3 overflow-auto main-panel" style="height: 95vh;">
+  <% @restaurants.each do |resto| %>
+    <%= render "restaurants/restaurant_card", resto: resto, link:false %>
+  <% end %>
+</div>

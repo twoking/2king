@@ -1,4 +1,19 @@
 class ListsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
+  def show
+    @link = Link.find_by(token: params[:id])
+    if @link.nil?
+      redirect_to root_path
+      flash[:alert] = "The link you are trying to access doesn't exist"
+    else
+      @user = @link.user
+      @restaurants = @user.restaurants
+      @link.count = @link.count + 1
+      @link.save
+    end
+  end
+
 
   def create
     restaurant = Restaurant.find(params[:restaurant_id])

@@ -1,5 +1,8 @@
-<a class="mx-2 restaurant-card-link" href="/restaurants/<%= resto.place_id %>">
-  <div class="card-product">
+
+<% if link %>
+  <a class="mx-2 restaurant-card-link" href="/restaurants/<%= resto.place_id %>">
+<% end %>
+  <div class="card-product <%= 'my-4' unless link %>" >
     <img src="<%= resto.photos.first %>">
     <div class="card-product-infos">
       <h2><%= resto.name %></h2>
@@ -8,4 +11,6 @@
       <p><%= resto.open_now? ? "OPEN" : "CLOSE" %></p>
     </div>
   </div>
-</a>
+<% if link %>
+  </a>
+<% end %>
