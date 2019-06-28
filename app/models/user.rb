@@ -98,6 +98,12 @@ class User < ApplicationRecord
       end
     end
 
+    unless options[:friends].nil?
+      options[:friends].each do |friend|
+        restaurants_arr << friend.restaurants
+      end
+    end
+
     restaurants_arr.flatten.uniq
   end
 
