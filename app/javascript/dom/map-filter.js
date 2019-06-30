@@ -24,6 +24,16 @@ const error = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
+const callRestaurantFilter = (payload) => {
+  deleteMarkers();
+  $.get('/restaurants-filter.json', payload, function(dataMarkers) {
+    dataMarkers.forEach(marker => {
+      addMarker(marker);
+    })
+    setMapOnAll(map);
+  });
+}
+
 const initDegreeFilter = () => {
   const $restaurantFilter = $('.restaurant-filter');
 
@@ -42,22 +52,22 @@ const initDegreeFilter = () => {
     const payload = {
       degreesFilter,
       ownList
-    }
+    };
 
-    deleteMarkers();
-    $.get('/restaurants-filter.json', payload, function(dataMarkers) {
-      dataMarkers.forEach(marker => {
-        addMarker(marker);
-      })
-      setMapOnAll(map);
-    });
+    callRestaurantFilter(payload);
   });
 }
 
 const initFriendFilter = () => {
-  const $friendFilter = $('.friend-filter')
+  const $friendFilter = $('.friend-filter');
 
   $friendFilter.on('change', function(e) {
-    console.log('search friend');
+    const friendIds = [];
+
+    $.each($(".friend-filter:checked"), function(){
+      friendIds.push(this.value);
+    });
+
+    callRestaurantFilter({ friendIds });
   });
 }

@@ -7,8 +7,8 @@ class RestaurantsHelperTest < ActionView::TestCase
     resto_3 = restaurants(:resto_3)
     restos_arr = [resto_1, resto_2]
 
-    assert location_mapper(restos_arr).include? [resto_1.latitude, resto_1.longitude, resto_1.name]
-    assert location_mapper(restos_arr).include? [resto_2.latitude, resto_2.longitude, resto_2.name]
-    assert_not location_mapper(restos_arr).include? [resto_3.latitude, resto_3.longitude, resto_3.name]
+    assert restaurant_mapper(restos_arr).include? [resto_1.latitude, resto_1.longitude, resto_1.name]
+    assert restaurant_mapper(restos_arr).include? [resto_2.latitude, resto_2.longitude, resto_2.name]
+    assert_not restaurant_mapper(restos_arr).include? [resto_3.latitude, resto_3.longitude, resto_3.name]
   end
 end
