@@ -92,13 +92,13 @@ class User < ApplicationRecord
       "3" => lambda { third_degree_friends_restos }
     }
 
-    unless options[:degrees].empty?
+    unless options[:degrees].blank?
       options[:degrees].each do |degree|
         restaurants_arr << filter_map[degree].call
       end
     end
 
-    unless options[:friends].empty?
+    unless options[:friends].blank?
       options[:friends].each do |friend|
         restaurants_arr << friend.restaurants
       end
