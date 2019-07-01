@@ -1,0 +1,49 @@
+.restaurant-show-card{
+    border-top: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    background: white;
+    text-align: left;
+    font-size: 14px;
+}
+
+.restaurant-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+.show-card-label{
+  width: 23%
+}
+
+.show-card-info{
+  width: 75%
+}
+
+//
+ .time-display-close{
+   overflow: auto;
+   height: 0px;
+   transition: height 2s;
+//   width: 60%;
+//   height: 200px;
+//   background-color: red;
+//   top: 40%;
+//   position: absolute;
+//   margin-right: auto;
+//   margin-left: auto;
+//   left: 0;
+//   right: 0;
+ }
+
+ .time-display-open{
+   height: 190px
+ }
+
+
+
+.opening-hours-box{
+  list-style: none;
+  margin: 0px;
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}

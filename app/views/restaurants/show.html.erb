@@ -1,42 +1,75 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 mx-auto">
-      <div class="card">
-        <%= render "photo_carousel", photos: @restaurant.photos %>
+<div class="show-container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 mx-auto p-0">
+        <div class="card carousel-picture-container">
+          <%= render "photo_carousel", photos: @restaurant.photos %>
+        </div>
       </div>
-      <ul>
-
-        <li><%= @restaurant.name %></li>
-        <li><%= @restaurant.address %></li>
-        <li><%= @restaurant.phone_number %></li>
-        <li><%= @restaurant.latitude %></li>
-        <li><%= @restaurant.longitude %></li>
-        <li><%= @restaurant.price_level %></li>
-        <li><%= @restaurant.website %></li>
-        <% if @restaurant.open_now? %>
-          <p>OPEN</p>
-        <% else %>
-          <p>CLOSE</p>
-        <% end  %>
-        <li>Opening Hours</li>
-          <ul>
-            <% @restaurant.opening_hours.each do |daytime| %>
-              <li><%= daytime %></li>
-            <% end %>
-          </ul>
-      </ul>
     </div>
   </div>
-  <div id="restaurant-form-container">
-    <% if @restaurant.id.nil? %>
-      <%= render "form", restaurant: @restaurant %>
-    <% elsif @restaurant.user_list(current_user) %>
-      <%= render "lists/destroy", list: @list %>
-    <% else %>
-      <%= render "lists/create", list: List.new %>
-    <% end %>
+  <div class="container text-center">
+    <h1 class="restaurant-name text-center my-3"><%= @restaurant.name.upcase %></h1>
+    <div class="restaurant-show-card py-2">
+      <div class="d-flex mb-1 justify-content-between">
+        <div class="show-card-label">Address:</div>
+        <div class="show-card-info"><%= @restaurant.address.split(",")[0..1].join(", ") %></div>
+      </div>
+      <div class="d-flex mb-1 justify-content-between">
+        <div class="show-card-label">Phone:</div>
+        <div class="show-card-info"><%= @restaurant.phone_number %></div>
+      </div>
+      <% unless @restaurant.website.blank? %>
+      <!-- <div class="d-flex mb-1 justify-content-between">
+        <div class="show-card-label">Website:</div>
+        <div><%#= @restaurant.website %></div>
+      </div> -->
+      <% end %>
+      <div class="d-flex mb-1 justify-content-between">
+        <div class="show-card-label">Hours:</div>
+        <div class="show-card-info"><%= @restaurant.open_now? %><i id="show-hours-btn" class="fas fa-caret-down ml-1"></i></div>
+      </div>
+      <div class="time-display-close">
+        <i class="close-time-box fas fa-times"></i>
+        <ul class="opening-hours-box">
+          <% @restaurant.opening_hours.each do |daytime| %>
+            <li class="mb-1"><%= daytime %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <% if @restaurant.price_level %>
+      <div class="d-flex mb-1 justify-content-between">
+        <div class="show-card-label">Price level:</div>
+        <div class="show-card-info"><%= @restaurant.display_price_level  %></div>
+      </div>
+      <% end %>
+    </div>
   </div>
 
-  <a class="btn btn-danger" onclick="history.back()"><i class="fas fa-caret-left"></i>Go Back</a>
+  <div class="footer">
+    <div class="footer-btn footer-btn-left ">
+      <div id="restaurant-form-container" class="text-center">
+        <% if @restaurant.id.nil? %>
+          <%= render "form", restaurant: @restaurant %>
+        <% elsif @restaurant.user_list(current_user) %>
+          <%= render "lists/destroy", list: @list %>
+        <% else %>
+          <%= render "lists/create", list: List.new %>
+        <% end %>
+      </div>
+    </div>
+    <div class="footer-btn footer-btn-right ">
+      <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
+    </div>
+  </div>
 
 </div>
+
+<script type="text/javascript">
+  const btn = document.querySelector("#show-hours-btn")
+  btn.addEventListener("click", ()=>{
+    const box = document.querySelector(".time-display-close")
+    box.classList.toggle("time-display-open")
+  })
+</script>

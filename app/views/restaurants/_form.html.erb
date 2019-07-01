@@ -7,6 +7,10 @@
   <%= hidden_field_tag("restaurant[website]", "#{restaurant.website}") %>
   <%= hidden_field_tag("restaurant[place_id]", "#{restaurant.place_id}") %>
   <%= hidden_field_tag("restaurant[photos]", "#{restaurant.photos}") %>
+  <%= hidden_field_tag("restaurant[price_level]", "#{restaurant.price_level}") %>
   <%= hidden_field_tag("restaurant[opening_hours]", "#{restaurant.opening_hours.join("<")}") %>
-  <%= f.submit "Add restaurant to your list" %>
+
+  <%= button_tag do %>
+    <span style="font-size: 25px; font-weight: bold; margin-right: 10px">+</span> Add to your list
+  <% end %>
 <% end  %>
