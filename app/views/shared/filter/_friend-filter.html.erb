@@ -1,0 +1,14 @@
+<div id="friend-filter" class="container my-3 panel">
+  <h3>Friends</h3>
+  <p>Choose the friends you want to see suggestions from:</p>
+  <hr>
+  <% current_user.followings.each do |friend| %>
+  <div class="form-check">
+    <input class="form-check-input friend-filter" type="checkbox" id="user-friend-<%=friend.id%>" value="<%= friend.id %>">
+    <label class="form-check-label" for="user-friend-<%=friend.id%>">
+      <%= friend.name %> (<%= friend.email %>)
+    </label>
+  </div>
+  <% end %>
+
+</div>
