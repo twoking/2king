@@ -1,0 +1,17 @@
+.panel {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.bottom-nav {
+  @extend .fixed-bottom;
+
+  display: none !important;
+
+  &.active {
+    @extend .d-flex;
+  }
+}

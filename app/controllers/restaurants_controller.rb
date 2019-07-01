@@ -28,12 +28,13 @@ class RestaurantsController < ApplicationController
 
   def filter
     degreesFilter = params[:degreesFilter].nil? ? [] : params[:degreesFilter]
-    userFilter = params[:ownList].nil? ? [] : params[:ownList] == "true"
+    userFilter = params[:ownList].nil? ? false : params[:ownList] == "true"
+    friendFilter = params[:friendIds].nil? ? [] : params[:friendIds].uniq.map { |id| User.find(id) }
 
-    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter)
+    @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter, friends: friendFilter)
 
     respond_to do |format|
-      format.json { render json: location_mapper(@filtered_restaurants) }
+      format.json { render json: restaurant_mapper(@filtered_restaurants) }
     end
   end
 
