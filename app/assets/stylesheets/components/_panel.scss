@@ -1,4 +1,6 @@
 .panel {
+  @extend .container, .my-3;
+
   display: none;
 
   &.active {

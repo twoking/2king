@@ -31,7 +31,32 @@ const callRestaurantFilter = (payload) => {
       addMarker({lat, lng});
     })
     setMapOnAll(map);
+    updateRestaurantDisplay(restos)
   });
+}
+
+const updateRestaurantDisplay = (restos) => {
+  const $mainPanel = $('#main-panel');
+  $mainPanel.empty();
+
+  restos.forEach(resto => {
+    const $card = `
+    <a class="mx-2 restaurant-card-link" href="/restaurants/${resto.place_id}">
+      <div class="card-product">
+        <img src="${resto.photos[0]}">
+        <div class="card-product-infos">
+          <h2>${resto.name}</h2>
+          <p>${resto.price_level || ''}</p>
+          <p>${resto.address}</p>
+        </div>
+      </div>
+    </a>`
+
+    // TODO: how to get ruby instance method on js?
+    // <p>${resto.open_now? ? 'OPEN' : 'CLOSED'}</p>
+
+    $mainPanel.append($card);
+  })
 }
 
 const initDegreeFilter = () => {
