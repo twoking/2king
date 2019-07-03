@@ -26,9 +26,9 @@ const error = (err) => {
 
 const callRestaurantFilter = (payload) => {
   deleteMarkers();
-  $.get('/restaurants-filter.json', payload, function(dataMarkers) {
-    dataMarkers.forEach(marker => {
-      addMarker(marker);
+  $.get('/restaurants-filter.json', payload, function(restos) {
+    restos.forEach(({latitude: lat, longitude: lng}) => {
+      addMarker({lat, lng});
     })
     setMapOnAll(map);
   });
