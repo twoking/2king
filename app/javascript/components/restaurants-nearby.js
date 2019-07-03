@@ -89,6 +89,14 @@ const listRestaurants = () => {
   });
 }
 
+const fetchRestaurantsNearBy = () => {
+  let btn = document.querySelector("#search-restaurant-nearby")
+  btn.addEventListener("click",(e)=> {
+    e.preventDefault()
+    localStorage.removeItem('restaurants');
+    listRestaurants()
+  })
+}
 export {
-  listRestaurants
+  listRestaurants, fetchRestaurantsNearBy
 }

@@ -4,7 +4,11 @@ import haversine from "haversine"
 
 const searchRestaurant = () => {
   const input = document.querySelector("#search_restaurant")
-  const autocomplete = new google.maps.places.Autocomplete(input,{ types: ['establishment']});
+  const options = {
+    types: ['establishment'],
+};
+
+  const autocomplete = new google.maps.places.Autocomplete(input, options);
   autocomplete.addListener('place_changed', () => {
    var resto = autocomplete.getPlace();
    const mylat = localStorage.getItem('lat');
@@ -23,7 +27,6 @@ const searchRestaurant = () => {
    resto.cover_picture = (resto.photos !== undefined) ? resto.photos[0].getUrl([200, 200]) : picture = resto.icon
    localStorage.setItem('restaurants', JSON.stringify([resto]))
    document.querySelector("#search-results").innerHTML = ""
-   document.querySelector("#search-title").innerText = "Search Result"
    appendRestaurant(resto)
   })
 }

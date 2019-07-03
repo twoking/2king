@@ -6,10 +6,10 @@
     font-size: 14px;
 }
 
-.restaurant-name{
-  font-size: 18px;
-  font-weight: bold;
+.show-container{
+  min-height: calc(100vh - 45px) !important;
 }
+
 .show-card-label{
   width: 23%
 }
@@ -22,16 +22,7 @@
  .time-display-close{
    overflow: auto;
    height: 0px;
-   transition: height 2s;
-//   width: 60%;
-//   height: 200px;
-//   background-color: red;
-//   top: 40%;
-//   position: absolute;
-//   margin-right: auto;
-//   margin-left: auto;
-//   left: 0;
-//   right: 0;
+   transition: height 0.7s;
  }
 
  .time-display-open{

@@ -20,6 +20,23 @@
 
 <%= render 'shared/filter/degree-filter' %>
 <%= render 'shared/filter/friend-filter' %>
-<%= render 'shared/bottom-nav' %>
+
+<div class="footer">
+  <div class="footer-btn footer-btn-left ">
+    <div class="text-centerfooter-button-link">
+      <%= link_to restaurants_path, class: "footer-button-link" do %>
+        Add a Restaurant
+      <% end %>
+    </div>
+  </div>
+  <div class="footer-btn footer-btn-right ">
+    <a href="whatsapp://send?text=<%=  %>" data-action="share/whatsapp/share">
+      <i class="mr-1 fas fa-share"></i>Share your list
+    </a>
+  </div>
+</div>
+
+
+
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}", defer: true %>

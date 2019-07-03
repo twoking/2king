@@ -30,7 +30,6 @@
         <div class="show-card-info"><%= @restaurant.open_now? %><i id="show-hours-btn" class="fas fa-caret-down ml-1"></i></div>
       </div>
       <div class="time-display-close">
-        <i class="close-time-box fas fa-times"></i>
         <ul class="opening-hours-box">
           <% @restaurant.opening_hours.each do |daytime| %>
             <li class="mb-1"><%= daytime %></li>
@@ -46,25 +45,25 @@
       <% end %>
     </div>
   </div>
+</div>
 
-  <div class="footer">
-    <div class="footer-btn footer-btn-left ">
-      <div id="restaurant-form-container" class="text-center">
-        <% if @restaurant.id.nil? %>
-          <%= render "form", restaurant: @restaurant %>
-        <% elsif @restaurant.user_list(current_user) %>
-          <%= render "lists/destroy", list: @list %>
-        <% else %>
-          <%= render "lists/create", list: List.new %>
-        <% end %>
-      </div>
-    </div>
-    <div class="footer-btn footer-btn-right ">
-      <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
+<div class="footer">
+  <div class="footer-btn footer-btn-left ">
+    <div id="restaurant-form-container" class="text-center">
+      <% if @restaurant.id.nil? %>
+        <%= render "form", restaurant: @restaurant %>
+      <% elsif @restaurant.user_list(current_user) %>
+        <%= render "lists/destroy", list: @list %>
+      <% else %>
+        <%= render "lists/create", list: List.new %>
+      <% end %>
     </div>
   </div>
-
+  <div class="footer-btn footer-btn-right ">
+    <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
+  </div>
 </div>
+
 
 <script type="text/javascript">
   const btn = document.querySelector("#show-hours-btn")
