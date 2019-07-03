@@ -1,25 +1,5 @@
-import { intersection } from "lodash"
 let map;
 let markers = [];
-
-const options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-const success = (pos) => {
-  const {latitude, longitude} = pos.coords;
-  initMap(latitude, longitude)
-}
-
-const error = (err) => {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-}
-
-const domLoaded = () => {
-  navigator.geolocation.getCurrentPosition(success, error, options);
-}
 
 const addMarker = ([lat, lng]) => {
   const marker = new google.maps.Marker({
@@ -29,7 +9,7 @@ const addMarker = ([lat, lng]) => {
   markers.push(marker);
 }
 
-// only delete all markers minus the current user position marker
+// delete all markers minus the current user position marker
 const deleteMarkers = () => {
   clearMarkers();
   markers = [markers[0]];
@@ -65,38 +45,4 @@ const initMap = (lat, lng, zoom = 15) => {
   setMapOnAll(map)
 }
 
-const initPlugin = () => {
-  $(function() {
-    domLoaded();
-
-    const restaurantFilter = $('.restaurant-filter');
-
-    restaurantFilter.on('change', function(e) {
-      const degreesFilter = [];
-      let ownList = false;
-
-      $.each($(".restaurant-filter:checked"), function(){
-        if($(this).hasClass('user-filter')) {
-          ownList = $(this).prop('checked');
-        } else {
-          degreesFilter.push($(this).val());
-        }
-      });
-
-      const payload = {
-        degreesFilter,
-        ownList
-      }
-
-      deleteMarkers();
-      $.get('/restaurants-filter.json', payload, function(dataMarkers) {
-        dataMarkers.forEach(marker => {
-          addMarker(marker);
-        })
-        setMapOnAll(map);
-      });
-    });
-  });
-}
-
-export { initPlugin }
+export { initMap, setMapOnAll, deleteMarkers, addMarker, map, markers}
