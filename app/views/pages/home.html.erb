@@ -12,9 +12,11 @@
   </div>
 </div>
 
+<!-- <a href="whatsapp://send?text=Here is my Food King list for you: <%#= list_url(@link.token) %>" data-action="share/whatsapp/share">Share via Whatsapp</a> -->
+
 <div class="container my-3 overflow-auto panel active" style="height: 35vh;">
   <% current_user.restaurants.each do |resto| %>
-    <%= render "restaurants/restaurant_card", resto: resto %>
+    <%= render "restaurants/restaurant_card", resto: resto, link: true %>
   <% end %>
 </div>
 

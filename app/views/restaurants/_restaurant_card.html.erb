@@ -1,6 +1,8 @@
-<%= link_to restaurant_path(resto.place_id) do %>
-  <div class="card-product my-2">
-    <img src="<%= resto.photos.first %>" width="">
+<% if link %>
+  <a class="mx-2 restaurant-card-link" href="/restaurants/<%= resto.place_id %>">
+<% end %>
+  <div class="card-product <%= 'my-4' unless link %>" >
+    <img src="<%= resto.photos.first %>">
     <div class="card-product-infos">
       <h2><%= resto.name %></h2>
       <p class="my-0"><%= resto.address.split(",")[0..1].join(", ") %></p>
@@ -10,4 +12,6 @@
       </div>
     </div>
   </div>
+<% if link %>
+  </a>
 <% end %>
