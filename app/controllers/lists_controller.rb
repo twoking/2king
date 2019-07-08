@@ -11,6 +11,7 @@ class ListsController < ApplicationController
       @restaurants = @user.restaurants
       @link.count = @link.count + 1
       @link.save
+      gon.markers = @user.restaurants.map { |resto| [resto.latitude, resto.longitude] }
     end
   end
 

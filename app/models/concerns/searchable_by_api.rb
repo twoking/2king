@@ -1,9 +1,9 @@
 module SearchableByApi
-  
+
   extend ActiveSupport::Concern
   module ClassMethods
     def api_search(place_id)
-      url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&fields=address_component,adr_address,alt_id,formatted_address,geometry,icon,id,name,permanently_closed,photo,place_id,plus_code,scope,type,url,utc_offset,vicinity,formatted_phone_number,website,price_level,opening_hours,rating,review,user_ratings_total&key=#{ENV['GOOGLE_API_KEY']}"
+      url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&fields=address_component,adr_address,alt_id,formatted_address,address_component,geometry,icon,id,name,permanently_closed,photo,place_id,plus_code,scope,type,url,utc_offset,vicinity,formatted_phone_number,website,price_level,opening_hours,rating,review,user_ratings_total&key=#{ENV['GOOGLE_API_KEY']}"
       resto_serialized = open(url).read
       restaurant_json = JSON.parse(resto_serialized)
       restaurant = Restaurant.new(
