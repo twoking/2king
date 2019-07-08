@@ -2,8 +2,6 @@ require 'json'
 require 'open-uri'
 
 class RestaurantsController < ApplicationController
-  include RestaurantsHelper
-
   def index
   end
 
@@ -34,7 +32,7 @@ class RestaurantsController < ApplicationController
     @filtered_restaurants = current_user.restaurants_filter(degrees: degreesFilter, with_own_list: userFilter, friends: friendFilter)
 
     respond_to do |format|
-      format.json { render json: restaurant_mapper(@filtered_restaurants) }
+      format.json { render json: @filtered_restaurants }
     end
   end
 
