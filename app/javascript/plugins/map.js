@@ -1,7 +1,7 @@
 let map;
 let markers = [];
 
-const addMarker = ([lat, lng]) => {
+const addMarker = ({lat, lng}) => {
   const marker = new google.maps.Marker({
     position: { lat, lng },
     map: map
@@ -34,7 +34,11 @@ const initMap = (lat, lng, zoom = 15) => {
   };
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  addMarker([myCoords.lat(), myCoords.lng()]);
+  const currentPosition = {
+    lat: myCoords.lat(),
+    lng: myCoords.lng()
+  }
+  addMarker(currentPosition);
 
   if (gon.markers.length) {
     gon.markers.forEach((marker) => {
