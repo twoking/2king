@@ -1,11 +1,20 @@
+const images = require.context('../images', true);
+const imagePath = (name) => images(name, true)
+
 let map;
 let markers = [];
 
-const addMarker = ({lat, lng}) => {
+const addMarker = ({lat, lng}, isResto = true) => {
   const marker = new google.maps.Marker({
     position: { lat, lng },
-    map: map
+    map: map,
+    icon: imagePath('./blue-dot.png')
   });
+
+  if(isResto) {
+    marker.icon = imagePath('./crown.png');
+  }
+
   markers.push(marker);
 }
 
@@ -38,7 +47,7 @@ const initMap = (lat, lng, zoom = 15) => {
     lat: myCoords.lat(),
     lng: myCoords.lng()
   }
-  addMarker(currentPosition);
+  addMarker(currentPosition, false);
 
   if (gon.markers.length) {
     gon.markers.forEach((marker) => {
