@@ -5,23 +5,8 @@
           <div class="card-product-infos">
             <h2><%= resto.name %></h2>
             <p class="my-0"><%= resto.address.split(",")[0..1].join(", ") %></p>
-            <div class="d-flex">
-              <p class="my-0"><%= resto.display_price_level %></p>
-              <p class="my-0">| <%= resto.open_now? ? "OPEN" : "CLOSE" %></p>
-            </div>
+            <p class="my-0 mr-1"><%= resto.open_now? ? "OPEN" : "CLOSE" %> | <%= resto.display_price_level %></p>
           </div>
         </div>
       <% end %>
-    <% else %>
-      <div class="card-product <%= 'my-4' unless link %>" >
-        <img src="<%= resto.photos.first %>">
-        <div class="card-product-infos">
-          <h2><%= resto.name %></h2>
-          <p class="my-0"><%= resto.address.split(",")[0..1].join(", ") %></p>
-          <div class="d-flex">
-            <p class="my-0"><%= resto.display_price_level %></p>
-            <p class="my-0">| <%= resto.open_now? ? "OPEN" : "CLOSE" %></p>
-          </div>
-        </div>
-      </div>
     <% end %>

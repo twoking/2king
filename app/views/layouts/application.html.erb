@@ -9,11 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= Gon::Base.render_data %>
     <%= yield(:head_tags) %>
-  </head>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
-    <%#= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="smartphone">
+      <div class="content">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+    </div>
+
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}&libraries=places" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

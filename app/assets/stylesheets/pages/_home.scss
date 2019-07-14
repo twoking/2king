@@ -1,8 +1,13 @@
 // Specific CSS for your home-page
 
 .home-container {
-  padding-bottom: 54px;
+  padding-bottom: 40px;
 }
+
+.home-container.panel{
+  margin-top: 0px !important
+}
+
 
 .home-btn-container {
   margin: 0 auto;
