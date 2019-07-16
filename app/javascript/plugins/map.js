@@ -3,8 +3,26 @@ const imagePath = (name) => images(name, true)
 
 let map;
 let markers = [];
+let prev_infowindow = false;
 
-const addMarker = ({lat, lng}, isResto = true) => {
+const $infoWindow = $('#info-window')
+
+const setupInfoWindow = (marker, {name, price_level, place_id}) => {
+  const price_level_label = price_level ? "$".repeat(price_level) : ''
+  const contentString = `
+    <a href="/restaurants/${place_id}">
+      ${name} ${ price_level_label ? ' | ' + price_level_label : ''}
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  `;
+
+  marker.addListener('click', function() {
+    $infoWindow.html(contentString);
+    $infoWindow.removeClass('invisible');
+  });
+}
+
+const addMarker = ({name, price_level, lat, lng, place_id}, isResto = true) => {
   const marker = new google.maps.Marker({
     position: { lat, lng },
     map: map,
@@ -13,6 +31,7 @@ const addMarker = ({lat, lng}, isResto = true) => {
 
   if(isResto) {
     marker.icon = imagePath('./crown.png');
+    setupInfoWindow(marker, {name, price_level, place_id});
   }
 
   markers.push(marker);
@@ -49,9 +68,9 @@ const initMap = (lat, lng, zoom = 15) => {
   }
   addMarker(currentPosition, false);
 
-  if (gon.markers.length) {
-    gon.markers.forEach((marker) => {
-      addMarker(marker);
+  if (gon.restos.length) {
+    gon.restos.forEach(({name, price_level, latitude: lat, longitude: lng, place_id}) => {
+      addMarker({name, price_level, lat, lng, place_id});
     });
   }
 
