@@ -150,6 +150,54 @@ def setup_restos
        "Saturday: 7:00 AM – 4:00 PM",
        "Sunday: 7:00 AM – 4:00 PM"],
        )
+
+  Restaurant.create!(
+    name: "Muddy Murphy's Irish Pub",
+    address: "442 Orchard Road #01-02 to 05 Claymore Connect, Singapore 238879",
+    phone_number: "6735 0400",
+    website: "http://muddymurphys.com/",
+    latitude: 1.307456,
+    longitude: 103.828996,
+    place_id: "ChIJ-ZtvtowZ2jERyywaJQ_r4DU",
+    price_level: "2",
+    photos:["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAfK8NsZiTt6IZ6JG4w7yq1hTD-U7ctfzbtAHFQtKpbnBnOhGKhqvNVm-m5dU54V7gl_wb3oYQry-4B-omu_hhY-a1CGCDfvLORmYHbxSwwt38S12e651G2XMW1o6dCzS-EhBWIphezMjKlETMPKqxk35AGhRUOGepbBJ_9oR3sU4gJ1SgzPBrlA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAACMTTYgG5CSHO0wab_2ywgt_iGqfQLXhZuGOnkEBQzjhA4-gO6CDYwzMQUpD19BmKx7O_cYjvvyH-T04Bll89q4O7TKgZm_ZyTbhgCFswMo6Q0oZtgbzEr5M3RUAiyqnOEhDKaCcjRRIXhNIfs86FiAmqGhR3WXPv2Bgh6J5Wnx2yxCVbbSD1Cw&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA0olm9PGv_NWe6VUnLLOFJBWJ7Q7esLO8lp_exF57HIibkrfONJyNbEJ3rkEPH0tUSutNDcoIAugKdaHaNKjOM1u6-D_HAvgRPIG4yAQvmig2T1Kd5NY3fRVbZMzugOXMEhALteIZaPYft3a_T06V3-i8GhTNLPHYO03z1mxzuK0e2ZpCcGNJ0A&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    opening_hours: [
+      "Monday: 11:00 AM – 1:00 AM",
+      "Tuesday: 11:00 AM – 1:00 AM",
+      "Wednesday: 11:00 AM – 1:00 AM",
+      "Thursday: 11:00 AM – 1:00 AM",
+      "Friday: 11:00 AM – 2:00 AM",
+      "Saturday: 11:00 AM – 2:00 AM",
+      "Sunday: 11:00 AM – 1:00 AM"
+    ])
+
+  Restaurant.create!(
+    name: "Wild Honey",
+    address: "6 Scotts Rd, #03 - K1 / 01 / 02, Singapore 228209",
+    phone_number: "6636 1816",
+    phone_number: "6636 1816",
+    website: "http://www.wildhoney.com.sg/",
+    latitude: 1.3059951,
+    longitude: 103.8329675,
+    place_id: "ChIJn4yxOb0Z2jERuXBCSPlwvOs",
+    price_level: "3",
+    photos:[
+      "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAdhKR33-8gEuyt3xmIv3mSHE927lbnOQYcLZeRn0DamLkYl7l1Z6braRZdbz1veztqBaM9ekOsaaOosiZKrZ2lhPn-OuizGI4Q1yhwOxItyZLCtAU14DPgqyrxOJmJc_9EhDbDTsyw9PEcV8fJcuO6B9ZGhT1SiI_qUoFFUIVLgliHKYJ6WVzqw&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAmDVLTDuWYo-73mrpGo2CsZsORuokvP0LephB_S2tdZcHFK3BUYkOaL0DalHaALp3ZjEwps5Co2XY6wxaF0cjYb66KI_A4fwq-AKhW-XJQrhr-BIGHZIXd3SJSqL9Nj_zEhCqDftXofGlxdLE5idvZXLQGhTGl4rb7xX52cpxUUzgCiTN1gYxDA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAK-PdMc7ClpjFGIrWT2cZuSi2vPwKeKBVTFgbuVrN1yEn9yd38kQvtDJSuuh8pYqW18Hk8vc2I3H2gmJ6J90PEZYZy7yRwBgrhKf3kZq0z2rbAkauJXg-j1Sj6LSoYju4EhBHW6k3-pqC3c9OqVOfqq0gGhTuOp-VZDXStlsmrYkCTnlkO4-Oig&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"
+    ],
+    opening_hours:[
+      "Monday: 9:00 AM – 8:30 PM",
+      "Tuesday: 9:00 AM – 8:30 PM",
+      "Wednesday: 9:00 AM – 8:30 PM",
+      "Thursday: 9:00 AM – 8:30 PM",
+      "Friday: 9:00 AM – 9:30 PM",
+      "Saturday: 9:00 AM – 9:30 PM",
+      "Sunday: 9:00 AM – 8:30 PM"
+    ]
+  )
 end
 
 def setup_restos_list(user_email)
@@ -165,17 +213,22 @@ def setup_restos_list(user_email)
   gypsy = Restaurant.all[3]
   mocca = Restaurant.all[4]
   rollies = Restaurant.all[5]
+  muddy_murphy = Restaurant.all[6]
+  wild_honey = Restaurant.all[7]
 
   tester_user.add_restaurant(fabrica)
   tester_user.add_restaurant(shady_shack)
+  tester_user.add_restaurant(muddy_murphy)
 
   second_user.add_restaurant(pretty_poison)
+  second_user.add_restaurant(muddy_murphy)
   second_user.add_restaurant(mocca)
 
   third_user.add_restaurant(gypsy)
   third_user.add_restaurant(fabrica)
 
   last_user.add_restaurant(rollies)
+  last_user.add_restaurant(wild_honey)
 end
 
 def complete_seed(user_email)
