@@ -1,6 +1,6 @@
 .map-wrapper {
-  position: relative;
-
+  position: sticky;
+  top: 0px;
   #info-window {
     border: 1px solid #1D347F;
     border-radius: 5px;
@@ -28,9 +28,4 @@
   width: 100%;
   height: 40vh;
   z-index: 12;
-}
-
-.home-map{
-  position: sticky !important;
-  top: 0px;
 }
