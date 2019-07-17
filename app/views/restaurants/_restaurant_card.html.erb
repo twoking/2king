@@ -1,4 +1,3 @@
-    <% if link %>
       <%= link_to restaurant_path(resto.place_id) do%>
         <div class="card-product my-2 <%= 'my-4' unless link %>" >
           <img src="<%= resto.photos.first %>">
@@ -8,5 +7,4 @@
             <p class="my-0 mr-1"><%= resto.open_now? ? "OPEN" : "CLOSE" %> | <%= resto.display_price_level %></p>
           </div>
         </div>
-      <% end %>
     <% end %>

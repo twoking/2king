@@ -5,7 +5,7 @@ class Link < ApplicationRecord
 
 
   def check_validity
-    self.destroy if self.count >= 5
+    self.destroy if self.count >= 25
   end
 
   def generate_token

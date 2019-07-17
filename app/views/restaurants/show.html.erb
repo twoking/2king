@@ -1,4 +1,4 @@
-<div class="show-container">
+<div class="full-page-container">
   <div class="container-fluid carousel-container">
     <div class="row">
       <div class="col-md-6 mx-auto p-0">
@@ -44,6 +44,7 @@
   </div>
 </div>
 
+<% if user_signed_in? %>
 <div class="footer">
   <div class="footer-btn footer-btn-left ">
     <div id="restaurant-form-container" class="text-center">
@@ -60,7 +61,13 @@
     <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
   </div>
 </div>
-
+<% else %>
+<div class="footer">
+  <div class="footer-btn footer-btn-right w-100 ">
+    <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
+  </div>
+</div>
+<% end %>
 
 <script type="text/javascript">
   const btn = document.querySelector("#show-hours-btn")

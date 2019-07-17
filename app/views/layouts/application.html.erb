@@ -11,14 +11,14 @@
     <%= yield(:head_tags) %>
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
   <body>
-    <div class="smartphone">
-      <div class="content">
-        <%= render 'shared/flashes' %>
-        <%= yield %>
-      </div>
-    </div>
+    <button id="btnAdd">dsdadssadasdsa</button>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+    <script>
 
+    </script>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}&libraries=places" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

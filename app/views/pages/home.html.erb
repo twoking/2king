@@ -1,26 +1,27 @@
 <% provide(:title, "Home") %>
-
-<div id="map" class="home-map">
-</div>
-
-<div class="d-flex home-btn-container">
-  <div class="flex-fill footer-btn footer-btn-left ">
-    <%= link_to "My list", "#", class: 'btn-home btn-block toggler', data: { target: 'degree-filter' } %>
+<div class="full-page-container">
+  <div id="map" class="home-map">
   </div>
-  <div class="flex-fill footer-btn footer-btn-left ">
-    <%= link_to "All friends", "#", class: 'btn-home btn-block toggler', data: { target: 'friend-filter' } %>
+
+  <div class="d-flex home-btn-container">
+    <div class="flex-fill footer-btn footer-btn-left ">
+      <%= link_to "My list", "#", class: 'btn-home btn-block toggler', data: { target: 'degree-filter' } %>
+    </div>
+    <div class="flex-fill footer-btn footer-btn-left ">
+      <%= link_to "All friends", "#", class: 'btn-home btn-block toggler', data: { target: 'friend-filter' } %>
+    </div>
   </div>
+
+
+  <div class="container home-container panel overflow-auto active">
+    <% current_user.restaurants.each do |resto| %>
+      <%= render "restaurants/restaurant_card", resto: resto, link: true %>
+    <% end %>
+  </div>
+
+  <%= render 'shared/filter/degree-filter' %>
+  <%= render 'shared/filter/friend-filter' %>
 </div>
-
-
-<div class="container home-container panel overflow-auto active">
-  <% current_user.restaurants.each do |resto| %>
-    <%= render "restaurants/restaurant_card", resto: resto, link: true %>
-  <% end %>
-</div>
-
-<%= render 'shared/filter/degree-filter' %>
-<%= render 'shared/filter/friend-filter' %>
 
 <div class="footer bottom-nav active" id="bottom-nav-filter">
   <div class="footer-btn footer-btn-left ">
