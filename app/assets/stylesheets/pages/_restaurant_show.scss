@@ -1,3 +1,13 @@
+.carousel-container{
+  position: sticky;
+  top: 0px
+}
+
+.restaurant-info-container{
+  overflow: auto;
+ height: 100%;
+}
+
 .restaurant-show-card{
     border-top: 1px solid $blue;
     border-bottom: 1px solid $blue;
@@ -22,11 +32,11 @@
  .time-display-close{
    overflow: auto;
    height: 0px;
-   transition: height 0.7s;
+   //transition: height 0.7s;
  }
 
  .time-display-open{
-   height: 190px
+   height: 100%
  }
 
 
@@ -35,6 +45,12 @@
   list-style: none;
   margin: 0px;
   text-align: left;
-  padding: 10px;
+  padding: 0px 14px;
   font-size: 14px;
+  div{
+    padding-right: 30%;
+    p{
+      margin-bottom: 5px
+    }
+  }
 }

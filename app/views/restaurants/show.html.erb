@@ -1,5 +1,5 @@
-<div class="show-container">
-  <div class="container-fluid">
+<div class="full-page-container">
+  <div class="container-fluid carousel-container">
     <div class="row">
       <div class="col-md-6 mx-auto p-0">
         <div class="card carousel-picture-container">
@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <div class="container text-center">
+  <div class="container text-center restaurant-info-container">
     <h1 class="restaurant-name text-center my-3"><%= @restaurant.name.upcase %></h1>
     <div class="restaurant-show-card py-2">
       <div class="d-flex mb-1 justify-content-between">
@@ -19,22 +19,19 @@
         <div class="show-card-label">Phone:</div>
         <div class="show-card-info"><%= @restaurant.phone_number %></div>
       </div>
-      <% unless @restaurant.website.blank? %>
-      <!-- <div class="d-flex mb-1 justify-content-between">
-        <div class="show-card-label">Website:</div>
-        <div><%#= @restaurant.website %></div>
-      </div> -->
-      <% end %>
       <div class="d-flex mb-1 justify-content-between">
         <div class="show-card-label">Hours:</div>
         <div class="show-card-info"><%= @restaurant.open_now? %><i id="show-hours-btn" class="fas fa-caret-down ml-1"></i></div>
       </div>
       <div class="time-display-close">
-        <ul class="opening-hours-box">
+        <div class="opening-hours-box">
           <% @restaurant.opening_hours.each do |daytime| %>
-            <li class="mb-1"><%= daytime %></li>
+            <div class="d-flex justify-content-between">
+              <p><%= daytime.split(": ")[0]%></p>
+              <p><%= daytime.split(": ")[1]%></p>
+            </div>
           <% end %>
-        </ul>
+        </div>
       </div>
 
       <% if @restaurant.price_level %>
@@ -47,6 +44,7 @@
   </div>
 </div>
 
+<% if user_signed_in? %>
 <div class="footer">
   <div class="footer-btn footer-btn-left ">
     <div id="restaurant-form-container" class="text-center">
@@ -63,7 +61,13 @@
     <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
   </div>
 </div>
-
+<% else %>
+<div class="footer">
+  <div class="footer-btn footer-btn-right w-100 ">
+    <a class="" onclick="history.back()"><i class="fas fa-caret-left mr-1"></i>Go Back</a>
+  </div>
+</div>
+<% end %>
 
 <script type="text/javascript">
   const btn = document.querySelector("#show-hours-btn")

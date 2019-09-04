@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'gon'
+gem "serviceworker-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

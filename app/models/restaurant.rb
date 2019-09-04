@@ -15,6 +15,7 @@ class Restaurant < ApplicationRecord
     end
   end
 
+
   #List ID based on current_user and restaurant
   def user_list(user)
     List.find_by(restaurant: self, user: user)

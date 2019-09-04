@@ -24,15 +24,15 @@ const restaurantCard = (resto) => {
       <div class="card-product-infos">
         <h2>${resto.name}</h2>
         <p class="my-1">${haversine(start, end).toFixed(2)}Km away ${isOpen}</p>
-        <div class="d-flex">
-          <p class="my-0">${priceRange}</</p>
-        </div>
+        <p class="my-0 mr-1">${isOpen} | ${priceRange}</p>
       </div>
     </div>
   </a>`
 
   )
 }
+
+
 
 
 const appendRestaurant = (result) =>{

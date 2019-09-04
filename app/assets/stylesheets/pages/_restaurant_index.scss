@@ -5,6 +5,6 @@
   font-size: 1rem;
 }
 
-.restaurant-index-container{
-  padding-bottom: 54px
+.full-page-container{
+  min-height: calc(100vh - 54px);
 }
