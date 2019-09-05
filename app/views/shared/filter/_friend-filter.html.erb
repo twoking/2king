@@ -1,6 +1,10 @@
 <div id="friend-filter" class="panel">
   <h3>Friends</h3>
   <p>Choose the friends you want to see suggestions from:</p>
+  <div class="d-flex align-items-center all-friends-toggler">
+    <div id="triangle"></div>
+    <p class="mb-0">Select All</p>
+  </div>
   <hr>
   <% current_user.followings.each do |friend| %>
   <div class="form-check">
@@ -10,5 +14,4 @@
     </label>
   </div>
   <% end %>
-
 </div>

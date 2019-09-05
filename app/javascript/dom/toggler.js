@@ -4,6 +4,9 @@ const $filterNav = $("#bottom-nav-filter");
 const $homeNav = $("#bottom-nav-home");
 const $listToggle = $("[data-target=degree-filter]");
 const $friendToggle = $("[data-target=friend-filter]");
+const $allFriendsToggle = $(".all-friends-toggler");
+const $friends = document.querySelectorAll(".friend-filter");
+const $triangle = $("#triangle");
 
 // maybe need refactoring
 
@@ -35,3 +38,14 @@ $homeNav.on("click", function(e) {
 	$panel.slice(1).removeClass("active");
 	$panel.first().addClass("active");
 });
+
+if ($allFriendsToggle) {
+	$allFriendsToggle.on("click", e => {
+		e.preventDefault();
+		$triangle[0].classList.toggle("blue-triangle");
+
+		$friends.forEach(friend => {
+			friend.checked = !friend.checked;
+		});
+	});
+}
