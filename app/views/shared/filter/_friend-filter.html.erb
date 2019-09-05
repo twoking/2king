@@ -4,9 +4,9 @@
   <hr>
   <% current_user.followings.each do |friend| %>
   <div class="form-check">
-    <input class="form-check-input friend-filter" type="checkbox" id="user-friend-<%=friend.id%>" value="<%= friend.id %>">
+    <input class="friend-filter regular-checkbox" type="checkbox" id="user-friend-<%=friend.id%>" value="<%= friend.id %>">
     <label class="form-check-label" for="user-friend-<%=friend.id%>">
-      <%= friend.name %> (<%= friend.email %>)
+      <%= friend.name %> <%#= friend.email) %>
     </label>
   </div>
   <% end %>
