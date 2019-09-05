@@ -12,8 +12,13 @@
   border-radius: 5px;
   display: inline-block;
   vertical-align: middle;
+  margin-right: .5rem;
 
   &:checked {
     background-color: #1D347F;
   }
+}
+
+.degree-label {
+  vertical-align: middle;
 }
