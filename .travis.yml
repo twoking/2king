@@ -6,10 +6,11 @@ services:
   - redis-server
 sudo: required
 before_install:
-- sudo apt-get update
-- sudo apt-get install google-chrome-stable
+  - sudo apt-get update
+  - sudo apt-get install google-chrome-stable
+  - gem install bundler
 addons:
-  postgresql: '9.6'
+  postgresql: "9.6"
 before_script:
   - psql -c 'create database twoking_test;' -U postgres
 script:
