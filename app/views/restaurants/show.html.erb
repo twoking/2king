@@ -37,7 +37,16 @@
       <% if @restaurant.price_level %>
       <div class="d-flex mb-1 justify-content-between">
         <div class="show-card-label">Price level:</div>
-        <div class="show-card-info"><%= @restaurant.display_price_level  %></div>
+        <div class="show-card-info d-flex">
+          <span><%= @restaurant.display_price_level %></span>
+          <% if @restaurant.price_level != '' %>
+            <span class="gray-price">
+              <% (5 - @restaurant.price_level.to_i).times do %>
+                $
+              <% end %>
+            </span>
+          <% end %>
+        </div>
       </div>
       <% end %>
     </div>
