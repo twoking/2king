@@ -1,3 +1,5 @@
+import { callRestaurantFilter } from "./map-filter";
+
 const $panel = $(".panel");
 const $toggler = $(".toggler");
 const $filterNav = $("#bottom-nav-filter");
@@ -40,12 +42,23 @@ $homeNav.on("click", function(e) {
 });
 
 if ($allFriendsToggle) {
+	const activeFriends = {};
 	$allFriendsToggle.on("click", e => {
 		e.preventDefault();
+		// Initialize empty array to push friend ids into
+		activeFriends.friendIds = [];
 		$triangle[0].classList.toggle("blue-triangle");
 
-		$friends.forEach(friend => {
-			friend.checked = !friend.checked;
-		});
+		// If triangle is on, call restaurant filter function with the ID's of all friends
+		if ($triangle[0].classList.contains("blue-triangle")) {
+			$friends.forEach(friend => {
+				friend.checked = true;
+				activeFriends.friendIds.push(friend.value);
+			});
+		} else {
+			// If not, turn off all friends
+			$friends.forEach(friend => (friend.checked = false));
+		}
+		callRestaurantFilter(activeFriends);
 	});
 }
