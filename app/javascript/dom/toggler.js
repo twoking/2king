@@ -12,22 +12,27 @@ const $triangle = $("#triangle");
 
 // maybe need refactoring
 
+// Gray or Blue box on the nav tabs
+const navTabStyle = (e, friend, list) => {
+	if (e.currentTarget === list[0]) {
+		friend[0].classList.add("text-secondary");
+		friend[0].parentElement.classList.add("btn-home-gray");
+		list[0].classList.remove("text-secondary");
+		list[0].parentElement.classList.remove("btn-home-gray");
+	} else {
+		list[0].classList.add("text-secondary");
+		list[0].parentElement.classList.add("btn-home-gray");
+		friend[0].classList.remove("text-secondary");
+		friend[0].parentElement.classList.remove("btn-home-gray");
+	}
+};
+
 $toggler.on("click", function(e) {
 	e.preventDefault();
 	const $target = $("#" + this.dataset.target).addClass("active");
 	$panel.not($target).removeClass("active");
 
-	if (e.currentTarget === $listToggle[0]) {
-		$friendToggle[0].classList.add("text-secondary");
-		$friendToggle[0].parentElement.classList.add("btn-home-gray");
-		$listToggle[0].classList.remove("text-secondary");
-		$listToggle[0].parentElement.classList.remove("btn-home-gray");
-	} else {
-		$listToggle[0].classList.add("text-secondary");
-		$listToggle[0].parentElement.classList.add("btn-home-gray");
-		$friendToggle[0].classList.remove("text-secondary");
-		$friendToggle[0].parentElement.classList.remove("btn-home-gray");
-	}
+	navTabStyle(e, $friendToggle, $listToggle);
 
 	$filterNav.removeClass("active");
 	$homeNav.addClass("active");
