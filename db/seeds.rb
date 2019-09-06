@@ -23,9 +23,9 @@ def setup_restos
     place_id: "ChIJf_dTwXk40i0R4f3nJ34ReEo",
     price_level: nil,
     photos:
-    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAjCEUvcC4CVv3LYLFPBsIROSEUTyMHA9oIqdoLiWO2skPtUziHJzP1gV2B37mIm3Z3BeQJTt9Icfzx8q03SKWAzL6CUPkwZUSIqUKkURvuRKAyOPZd0I5AgXgqIBK2pdUEhCykTkDAXWeW0zRWd_hpfjfGhSN_E0fsNONjCJDgDXf25gYVyUESQ&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAJ9tzJD4QlfdSTr5LGFjc8Mnd5zMGPpt6ovoCwXkoYV66F67dEYFKbNQugi2RTpjXGEf3Mhwi3TylGwEVOw2SJaZgPJshFb15Fqo_qa1423S1Of50feUdYD53og6TzkxuEhAybyUyNBebo3uo87RH80YIGhRRnTyA0r5zB5UVcbexUS7yABQSvA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAALpz5_DzZO_jVd0GHtWU_VAbEUahHU_QnxivlWaFCwmBfn0nFmeoEM6wSjA1TXD08VsxRxlIyu5BXH-PjAkgMK5OoJ1RF91J9jhV28Dq_Ftbidl2ZlGevaSqCiM6e-_S8EhAZo6PO7U71u02wKhMtHmpDGhSbyZCPi_8CgkQfzSlGqRbADXLvtQ&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAjCEUvcC4CVv3LYLFPBsIROSEUTyMHA9oIqdoLiWO2skPtUziHJzP1gV2B37mIm3Z3BeQJTt9Icfzx8q03SKWAzL6CUPkwZUSIqUKkURvuRKAyOPZd0I5AgXgqIBK2pdUEhCykTkDAXWeW0zRWd_hpfjfGhSN_E0fsNONjCJDgDXf25gYVyUESQ&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAJ9tzJD4QlfdSTr5LGFjc8Mnd5zMGPpt6ovoCwXkoYV66F67dEYFKbNQugi2RTpjXGEf3Mhwi3TylGwEVOw2SJaZgPJshFb15Fqo_qa1423S1Of50feUdYD53og6TzkxuEhAybyUyNBebo3uo87RH80YIGhRRnTyA0r5zB5UVcbexUS7yABQSvA&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAALpz5_DzZO_jVd0GHtWU_VAbEUahHU_QnxivlWaFCwmBfn0nFmeoEM6wSjA1TXD08VsxRxlIyu5BXH-PjAkgMK5OoJ1RF91J9jhV28Dq_Ftbidl2ZlGevaSqCiM6e-_S8EhAZo6PO7U71u02wKhMtHmpDGhSbyZCPi_8CgkQfzSlGqRbADXLvtQ&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
      opening_hours:
      ["Monday: 10:00 AM – 12:00 AM",
        "Tuesday: 10:00 AM – 12:00 AM",
@@ -46,9 +46,9 @@ def setup_restos
     place_id: "ChIJH6Xg6nk40i0RkpnxaV9yCWs",
     price_level: nil,
     photos:
-    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAV6Tx3PqMQviMqw0_sfh3ktjrVojdbaDmK50Zpf_twNRGmk1BACymrGmiptPtEyh5o3I0QPpZ9sPh-sQhNS8Pig82HYKnsniZreq2MXQHq_zV7ICQ7391Kfz2A7m2ixc1EhCmOfGy63GU07Qjc13FRgx1GhR6zf__Lmjqso_Xp6ZM5Qx9xJD0Pw&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAYJB8R2S4fPgVWFtdTK4MI5dXBnZJAMe8Z3FrWeCdOucObJD3qoIp8XL0q9RqzPlgpGS2McAh3Sn-rJg2KOpmEYS7oETnefeyyyaQYNdYQthRhr4IUPhXv16VbeANQtkBEhB7w2nlfENZnNFMz4Ty1SAQGhSOWtmujGb_FqaZ8apmeCGWmApYag&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAadbteh4oZCzKnXlThhxp2FLt-ol3JEB-1R5HshvY9Ndxket1ZE_d8794ST2xlMRaG106YoSlOtUq4ePLbqpB8ZHO2RQ_g2j_CM_0MdZuLIA8Wd9Ci9QP09Grt-kk1J4MEhD_5vVs8JaJt-HbdXGtpnAPGhQ4W_g0vzCdmQPXhFF8jLnE-G1uSw&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAV6Tx3PqMQviMqw0_sfh3ktjrVojdbaDmK50Zpf_twNRGmk1BACymrGmiptPtEyh5o3I0QPpZ9sPh-sQhNS8Pig82HYKnsniZreq2MXQHq_zV7ICQ7391Kfz2A7m2ixc1EhCmOfGy63GU07Qjc13FRgx1GhR6zf__Lmjqso_Xp6ZM5Qx9xJD0Pw&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAYJB8R2S4fPgVWFtdTK4MI5dXBnZJAMe8Z3FrWeCdOucObJD3qoIp8XL0q9RqzPlgpGS2McAh3Sn-rJg2KOpmEYS7oETnefeyyyaQYNdYQthRhr4IUPhXv16VbeANQtkBEhB7w2nlfENZnNFMz4Ty1SAQGhSOWtmujGb_FqaZ8apmeCGWmApYag&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAadbteh4oZCzKnXlThhxp2FLt-ol3JEB-1R5HshvY9Ndxket1ZE_d8794ST2xlMRaG106YoSlOtUq4ePLbqpB8ZHO2RQ_g2j_CM_0MdZuLIA8Wd9Ci9QP09Grt-kk1J4MEhD_5vVs8JaJt-HbdXGtpnAPGhQ4W_g0vzCdmQPXhFF8jLnE-G1uSw&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
      opening_hours:
      ["Monday: 7:30 AM – 10:30 PM",
        "Tuesday: 7:30 AM – 10:30 PM",
@@ -69,9 +69,9 @@ def setup_restos
     place_id: "ChIJIa89_H440i0RYxnmQm7eXRM",
     price_level: nil,
     photos:
-    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAYxpMmTycA8P_KWj-OZASpf034dErA71dcWIKWwdVvDgoHUuB40d3TFmmwxk5fqHd3xkvv06FKOUnxnKwX7ejIuAIrKwhoVP77M7yulZviIkm1dcncuqM0hheMkXaTBC0EhCFYfRiCnZKm6o3XRmRphUYGhQJvYBmYa5ZOV9Jwn_gTBBPd2jC-A&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA6dirADA_RwxZs_m6Qv8yCqNyjtqUGhgWJshpBJn-kXC_nmNmygpGMNKhi6hCA1bH2cHi3FYB_bPDT1tbTg_e9s0Ue6V9Uk_yg6Vy0cXcC-e5mOW_-F9W_XbwO19YM9G3EhByxcGH__1nB0vtjddokJMdGhTbMA9vw1pHO5veIWfHK79mk5GKbQ&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAWW2NAIdPds3TYT2UfhLwhSStTWAlXnLofa6NTESnEfbYX23t5UVaXVMtyNZFKc8IZ-OeZAgVKrs7R7dRZ5pKDRgzur_AHuW8iuSA9b0u5QoMJ6kxTg_RdTOkwveeCHakEhAe8oMviZZ2HgzBUz50Lo-lGhSt6k1p9rQlLQ1m2z5krWVx9q2lBg&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAYxpMmTycA8P_KWj-OZASpf034dErA71dcWIKWwdVvDgoHUuB40d3TFmmwxk5fqHd3xkvv06FKOUnxnKwX7ejIuAIrKwhoVP77M7yulZviIkm1dcncuqM0hheMkXaTBC0EhCFYfRiCnZKm6o3XRmRphUYGhQJvYBmYa5ZOV9Jwn_gTBBPd2jC-A&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA6dirADA_RwxZs_m6Qv8yCqNyjtqUGhgWJshpBJn-kXC_nmNmygpGMNKhi6hCA1bH2cHi3FYB_bPDT1tbTg_e9s0Ue6V9Uk_yg6Vy0cXcC-e5mOW_-F9W_XbwO19YM9G3EhByxcGH__1nB0vtjddokJMdGhTbMA9vw1pHO5veIWfHK79mk5GKbQ&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAWW2NAIdPds3TYT2UfhLwhSStTWAlXnLofa6NTESnEfbYX23t5UVaXVMtyNZFKc8IZ-OeZAgVKrs7R7dRZ5pKDRgzur_AHuW8iuSA9b0u5QoMJ6kxTg_RdTOkwveeCHakEhAe8oMviZZ2HgzBUz50Lo-lGhSt6k1p9rQlLQ1m2z5krWVx9q2lBg&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
      opening_hours:
      ["Monday: 4:00 PM – 12:00 AM",
        "Tuesday: 4:00 PM – 12:00 AM",
@@ -92,9 +92,9 @@ def setup_restos
     place_id: "ChIJfyzpyXk40i0RWMIepwHfdtc",
     price_level: nil,
     photos:
-    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAANM0nrfQ8YlQVEHcFp8AVSUf-GG3OoCJX8lHBF2QyVEkghBTbA_BW4KdauW3D9XPkCUmtVeshCtSrWgnLHvRwA33YwD5eSJGubityJOLRLHFpySYCcIBhNcZrdupDFWe4EhC698-EuOCnX5pqE_o-6lJXGhTzAOI10uCi4v6C2KLNyrEDq73eSA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAbv57MuVUp7YCD78HjGf5FWkSjhvWeSVmCpRHyBRcRTIvZOsSUeFh9sx3xqnjZSN3L1-tf_7YY8SOlzheVQPuL_ipwbVccvbUpwQhNegEY8pqLyG_2b-QXC94FjRW7V6AEhBLm55XEC2YbeObrBVNtNrwGhQog9ggJa4BvxOOhVGjgFWACYrWyQ&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAALL__jVM-AlxeKJa9uOVmQ-PZECPUi3y3CKJeZ6Tobq-07JvbIwM2-Mn4fr8u9QXOj0KoMXkcs-gQOp333sr3_2_kxO8eGEjcGQxi-ZLtWSWxkjeuuWIkN5a0WH68TzJjEhBNatpHQh05hiymFSD2dFf7GhSEPQU4Lgg2UojnZkfSjvKdbW9qlQ&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAANM0nrfQ8YlQVEHcFp8AVSUf-GG3OoCJX8lHBF2QyVEkghBTbA_BW4KdauW3D9XPkCUmtVeshCtSrWgnLHvRwA33YwD5eSJGubityJOLRLHFpySYCcIBhNcZrdupDFWe4EhC698-EuOCnX5pqE_o-6lJXGhTzAOI10uCi4v6C2KLNyrEDq73eSA&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAbv57MuVUp7YCD78HjGf5FWkSjhvWeSVmCpRHyBRcRTIvZOsSUeFh9sx3xqnjZSN3L1-tf_7YY8SOlzheVQPuL_ipwbVccvbUpwQhNegEY8pqLyG_2b-QXC94FjRW7V6AEhBLm55XEC2YbeObrBVNtNrwGhQog9ggJa4BvxOOhVGjgFWACYrWyQ&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAALL__jVM-AlxeKJa9uOVmQ-PZECPUi3y3CKJeZ6Tobq-07JvbIwM2-Mn4fr8u9QXOj0KoMXkcs-gQOp333sr3_2_kxO8eGEjcGQxi-ZLtWSWxkjeuuWIkN5a0WH68TzJjEhBNatpHQh05hiymFSD2dFf7GhSEPQU4Lgg2UojnZkfSjvKdbW9qlQ&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
      opening_hours:
      ["Monday: 8:00 AM – 10:00 PM",
        "Tuesday: 8:00 AM – 10:00 PM",
@@ -115,9 +115,9 @@ def setup_restos
     place_id: "ChIJ1UOc4QQ50i0RzGcaT334kwE",
     price_level: nil,
     photos:
-    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAhRZFjo4AB7J9wXC6Bds0zLWujD8kuJruK5-sOkvvvTUPY4FL-8vUCjlNb4p9QmrcUwx139i0ZMVWkV04NdAS3pjE6Rx-ippAqITucEqo3XR-gHWjPtFJ0A1Um7R9tNN9EhCtv6uAbRxGdCjJMrk8tGQeGhQ7-AoWr-1pjB19LCX9ou1XdMlbrg&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAfZAH9iz9zVO-MDJZw1A1_hhZIjTG0Q6m_7eX1DRz3xzbUTNDqg3k24TGHhl4chn089NODrftPK5mf-BG4TbFxngR4NBku9vds4vwmWPoLYNOooMGSvEZewUXI2EqXfbkEhDCtqFqvq29YyY6PgnJyn6ZGhR1FaduGGRTMo5gK5cmAZJq-mgbhg&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA-cB00wNIORkfAEDkFIuCKDX0OFc2Cz64sNVWW65yd7QGJOTfMsto17uVDFiL-NmHUNgaJ6Fwmj-v4_Tpcpb5LGAbJK--KyRuEljNQdV0XEYnx5rKk-p7xG0lWQxXty95EhBFTBHq8Bd6lZiIdPrwMO_tGhQ7__eI3yb9JNVFIOFhlAaNJu5xeA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAhRZFjo4AB7J9wXC6Bds0zLWujD8kuJruK5-sOkvvvTUPY4FL-8vUCjlNb4p9QmrcUwx139i0ZMVWkV04NdAS3pjE6Rx-ippAqITucEqo3XR-gHWjPtFJ0A1Um7R9tNN9EhCtv6uAbRxGdCjJMrk8tGQeGhQ7-AoWr-1pjB19LCX9ou1XdMlbrg&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAfZAH9iz9zVO-MDJZw1A1_hhZIjTG0Q6m_7eX1DRz3xzbUTNDqg3k24TGHhl4chn089NODrftPK5mf-BG4TbFxngR4NBku9vds4vwmWPoLYNOooMGSvEZewUXI2EqXfbkEhDCtqFqvq29YyY6PgnJyn6ZGhR1FaduGGRTMo5gK5cmAZJq-mgbhg&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA-cB00wNIORkfAEDkFIuCKDX0OFc2Cz64sNVWW65yd7QGJOTfMsto17uVDFiL-NmHUNgaJ6Fwmj-v4_Tpcpb5LGAbJK--KyRuEljNQdV0XEYnx5rKk-p7xG0lWQxXty95EhBFTBHq8Bd6lZiIdPrwMO_tGhQ7__eI3yb9JNVFIOFhlAaNJu5xeA&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
      opening_hours:
      ["Monday: 7:00 AM – 10:00 PM",
        "Tuesday: 7:00 AM – 10:00 PM",
@@ -138,9 +138,9 @@ def setup_restos
     place_id: "ChIJGwjheuE50i0RRke32-Q3I3s",
     price_level: nil,
     photos:
-    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAHOQTK7q2_qsPSbyjQr8nOvL20VjK8iH3mz3ClkO1cF5j7gzlBzV5xVTVHCf_ey0hQCqquA47Wh41dQ4gtY9_cq3i5rETijTvidrbI_gd15RKBWjcFSYGdC7w3u_bFCIMEhAsOJaYL4UNeQVZhI0CDTFPGhTqBCN8Ahfyz378sROjrdoCMiA8DA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAV0vUdtVNlwltEHToj0L1bvpHhlYXrjMEn0_sP8hUQDLV50be9dp25d0omE47L3-OKaF3fu0iKBLD7eArpE2ZGTldcZaTKtVM9C9AFoTXC3TjMUBCUPUuUtP8zMFJuhVWEhDcCar64l95Dbg0q5glJRU3GhTstUDVAggrkUSHRThUmraWUNrelg&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAsFj42Q0eIV9nhCbGcuJ7JB7BW5_eeRlLWWj8dWkmZWuEUb33R1C5o61aOOvQ_BSmguYJP8ytQAUDzdowvQc_AiibCAMD3ciNc-BFMV0_rMWv_WHYI_deHkqTWq2hh-QIEhCYZTE0XCR5kKHULj8cCtG8GhRo19cGazW6zz6-5Lh1Lq7XgxJOMQ&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAHOQTK7q2_qsPSbyjQr8nOvL20VjK8iH3mz3ClkO1cF5j7gzlBzV5xVTVHCf_ey0hQCqquA47Wh41dQ4gtY9_cq3i5rETijTvidrbI_gd15RKBWjcFSYGdC7w3u_bFCIMEhAsOJaYL4UNeQVZhI0CDTFPGhTqBCN8Ahfyz378sROjrdoCMiA8DA&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAV0vUdtVNlwltEHToj0L1bvpHhlYXrjMEn0_sP8hUQDLV50be9dp25d0omE47L3-OKaF3fu0iKBLD7eArpE2ZGTldcZaTKtVM9C9AFoTXC3TjMUBCUPUuUtP8zMFJuhVWEhDcCar64l95Dbg0q5glJRU3GhTstUDVAggrkUSHRThUmraWUNrelg&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+     " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAsFj42Q0eIV9nhCbGcuJ7JB7BW5_eeRlLWWj8dWkmZWuEUb33R1C5o61aOOvQ_BSmguYJP8ytQAUDzdowvQc_AiibCAMD3ciNc-BFMV0_rMWv_WHYI_deHkqTWq2hh-QIEhCYZTE0XCR5kKHULj8cCtG8GhRo19cGazW6zz6-5Lh1Lq7XgxJOMQ&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
      opening_hours:
      ["Monday: 7:00 AM – 4:00 PM",
        "Tuesday: 7:00 AM – 4:00 PM",
@@ -160,9 +160,9 @@ def setup_restos
     longitude: 103.828996,
     place_id: "ChIJ-ZtvtowZ2jERyywaJQ_r4DU",
     price_level: "2",
-    photos:["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAfK8NsZiTt6IZ6JG4w7yq1hTD-U7ctfzbtAHFQtKpbnBnOhGKhqvNVm-m5dU54V7gl_wb3oYQry-4B-omu_hhY-a1CGCDfvLORmYHbxSwwt38S12e651G2XMW1o6dCzS-EhBWIphezMjKlETMPKqxk35AGhRUOGepbBJ_9oR3sU4gJ1SgzPBrlA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAACMTTYgG5CSHO0wab_2ywgt_iGqfQLXhZuGOnkEBQzjhA4-gO6CDYwzMQUpD19BmKx7O_cYjvvyH-T04Bll89q4O7TKgZm_ZyTbhgCFswMo6Q0oZtgbzEr5M3RUAiyqnOEhDKaCcjRRIXhNIfs86FiAmqGhR3WXPv2Bgh6J5Wnx2yxCVbbSD1Cw&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA0olm9PGv_NWe6VUnLLOFJBWJ7Q7esLO8lp_exF57HIibkrfONJyNbEJ3rkEPH0tUSutNDcoIAugKdaHaNKjOM1u6-D_HAvgRPIG4yAQvmig2T1Kd5NY3fRVbZMzugOXMEhALteIZaPYft3a_T06V3-i8GhTNLPHYO03z1mxzuK0e2ZpCcGNJ0A&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"],
+    photos:["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAfK8NsZiTt6IZ6JG4w7yq1hTD-U7ctfzbtAHFQtKpbnBnOhGKhqvNVm-m5dU54V7gl_wb3oYQry-4B-omu_hhY-a1CGCDfvLORmYHbxSwwt38S12e651G2XMW1o6dCzS-EhBWIphezMjKlETMPKqxk35AGhRUOGepbBJ_9oR3sU4gJ1SgzPBrlA&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAACMTTYgG5CSHO0wab_2ywgt_iGqfQLXhZuGOnkEBQzjhA4-gO6CDYwzMQUpD19BmKx7O_cYjvvyH-T04Bll89q4O7TKgZm_ZyTbhgCFswMo6Q0oZtgbzEr5M3RUAiyqnOEhDKaCcjRRIXhNIfs86FiAmqGhR3WXPv2Bgh6J5Wnx2yxCVbbSD1Cw&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA0olm9PGv_NWe6VUnLLOFJBWJ7Q7esLO8lp_exF57HIibkrfONJyNbEJ3rkEPH0tUSutNDcoIAugKdaHaNKjOM1u6-D_HAvgRPIG4yAQvmig2T1Kd5NY3fRVbZMzugOXMEhALteIZaPYft3a_T06V3-i8GhTNLPHYO03z1mxzuK0e2ZpCcGNJ0A&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"],
     opening_hours: [
       "Monday: 11:00 AM – 1:00 AM",
       "Tuesday: 11:00 AM – 1:00 AM",
@@ -184,9 +184,9 @@ def setup_restos
     place_id: "ChIJn4yxOb0Z2jERuXBCSPlwvOs",
     price_level: "3",
     photos:[
-      "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAdhKR33-8gEuyt3xmIv3mSHE927lbnOQYcLZeRn0DamLkYl7l1Z6braRZdbz1veztqBaM9ekOsaaOosiZKrZ2lhPn-OuizGI4Q1yhwOxItyZLCtAU14DPgqyrxOJmJc_9EhDbDTsyw9PEcV8fJcuO6B9ZGhT1SiI_qUoFFUIVLgliHKYJ6WVzqw&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAmDVLTDuWYo-73mrpGo2CsZsORuokvP0LephB_S2tdZcHFK3BUYkOaL0DalHaALp3ZjEwps5Co2XY6wxaF0cjYb66KI_A4fwq-AKhW-XJQrhr-BIGHZIXd3SJSqL9Nj_zEhCqDftXofGlxdLE5idvZXLQGhTGl4rb7xX52cpxUUzgCiTN1gYxDA&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM",
-      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAK-PdMc7ClpjFGIrWT2cZuSi2vPwKeKBVTFgbuVrN1yEn9yd38kQvtDJSuuh8pYqW18Hk8vc2I3H2gmJ6J90PEZYZy7yRwBgrhKf3kZq0z2rbAkauJXg-j1Sj6LSoYju4EhBHW6k3-pqC3c9OqVOfqq0gGhTuOp-VZDXStlsmrYkCTnlkO4-Oig&key=AIzaSyAwvBJlD1AlfTMOXP2IZdAD8SIVvi_GEjM"
+      "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAdhKR33-8gEuyt3xmIv3mSHE927lbnOQYcLZeRn0DamLkYl7l1Z6braRZdbz1veztqBaM9ekOsaaOosiZKrZ2lhPn-OuizGI4Q1yhwOxItyZLCtAU14DPgqyrxOJmJc_9EhDbDTsyw9PEcV8fJcuO6B9ZGhT1SiI_qUoFFUIVLgliHKYJ6WVzqw&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAmDVLTDuWYo-73mrpGo2CsZsORuokvP0LephB_S2tdZcHFK3BUYkOaL0DalHaALp3ZjEwps5Co2XY6wxaF0cjYb66KI_A4fwq-AKhW-XJQrhr-BIGHZIXd3SJSqL9Nj_zEhCqDftXofGlxdLE5idvZXLQGhTGl4rb7xX52cpxUUzgCiTN1gYxDA&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw",
+      " https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAK-PdMc7ClpjFGIrWT2cZuSi2vPwKeKBVTFgbuVrN1yEn9yd38kQvtDJSuuh8pYqW18Hk8vc2I3H2gmJ6J90PEZYZy7yRwBgrhKf3kZq0z2rbAkauJXg-j1Sj6LSoYju4EhBHW6k3-pqC3c9OqVOfqq0gGhTuOp-VZDXStlsmrYkCTnlkO4-Oig&key=AIzaSyCnavfc_wpgoXR3OvehGxZwjFaU4mEuNUw"
     ],
     opening_hours:[
       "Monday: 9:00 AM – 8:30 PM",
