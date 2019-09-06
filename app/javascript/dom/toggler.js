@@ -53,11 +53,15 @@ if ($allFriendsToggle) {
 		if ($triangle[0].classList.contains("blue-triangle")) {
 			$friends.forEach(friend => {
 				friend.checked = true;
+				friend.nextElementSibling.classList.add("font-weight-bold");
 				activeFriends.friendIds.push(friend.value);
 			});
 		} else {
 			// If not, turn off all friends
-			$friends.forEach(friend => (friend.checked = false));
+			$friends.forEach(friend => {
+				friend.checked = false;
+				friend.nextElementSibling.classList.remove("font-weight-bold");
+			});
 		}
 		callRestaurantFilter(activeFriends);
 	});
