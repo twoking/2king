@@ -11,19 +11,24 @@ const $friends = document.querySelectorAll(".friend-filter");
 const $triangle = $("#triangle");
 
 // maybe need refactoring
+const addStyle = navToggler => {
+	navToggler[0].classList.add("text-secondary");
+	navToggler[0].parentElement.classList.add("btn-home-gray");
+};
+
+const removeStyle = navToggler => {
+	navToggler[0].classList.remove("text-secondary");
+	navToggler[0].parentElement.classList.remove("btn-home-gray");
+};
 
 // Gray or Blue box on the nav tabs
 const navTabStyle = (e, friend, list) => {
 	if (e.currentTarget === list[0]) {
-		friend[0].classList.add("text-secondary");
-		friend[0].parentElement.classList.add("btn-home-gray");
-		list[0].classList.remove("text-secondary");
-		list[0].parentElement.classList.remove("btn-home-gray");
+		addStyle(friend);
+		removeStyle(list);
 	} else {
-		list[0].classList.add("text-secondary");
-		list[0].parentElement.classList.add("btn-home-gray");
-		friend[0].classList.remove("text-secondary");
-		friend[0].parentElement.classList.remove("btn-home-gray");
+		addStyle(list);
+		removeStyle(friend);
 	}
 };
 
