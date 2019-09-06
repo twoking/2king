@@ -76,3 +76,22 @@ if ($allFriendsToggle) {
 		callRestaurantFilter(activeFriends);
 	});
 }
+
+$friends.forEach(friend => {
+	friend.addEventListener("click", e => {
+		const triangleOn = $triangle[0].classList.contains("blue-triangle");
+		if (triangleOn && !e.currentTarget.checked) {
+			$triangle[0].classList.remove("blue-triangle");
+		}
+
+		const checkedFriends = [];
+		Array.from($friends).map(friend => {
+			checkedFriends.push(friend.checked);
+		});
+
+		// Check if every input is active, add blue triangle if yes
+		if (checkedFriends.every(ele => ele)) {
+			$triangle[0].classList.add("blue-triangle");
+		}
+	});
+});
