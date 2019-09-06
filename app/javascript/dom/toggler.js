@@ -80,6 +80,7 @@ if ($allFriendsToggle) {
 $friends.forEach(friend => {
 	friend.addEventListener("click", e => {
 		const triangleOn = $triangle[0].classList.contains("blue-triangle");
+		// Gray triangle if any one of the input is inactive
 		if (triangleOn && !e.currentTarget.checked) {
 			$triangle[0].classList.remove("blue-triangle");
 		}
