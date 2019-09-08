@@ -2,8 +2,6 @@ const listButton = document.querySelector("[data-target=degree-filter]");
 const degreeInputs = document.querySelectorAll(
 	"#degree-filter input[type=checkbox]"
 );
-// const prependedComma = [", My List", ", 1st", ", 2nd", ", 3rd"];
-// const appendedComma = ["My List, ", "1st, ", "2nd, ", "3rd, "];
 
 // TODO: Clean up the the whole code in this file
 
