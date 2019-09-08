@@ -7,24 +7,33 @@ const degreeInputs = document.querySelectorAll(
 
 // TODO: Clean up the the whole code in this file
 
+// Add the newly activated input to the button text
 const changeTextContent = (button, text) => {
-	if (button.textContent) {
-		button.textContent += `, ${text}`;
+	// If button text is NOT 'add a filter'
+	if (button.textContent === "add a filter") {
+		button.textContent = text;
 	} else {
-		button.textContent += text;
+		button.textContent += `, ${text}`;
 	}
 };
 
+// Remove button text if it was activated beforehand
 const removeButtonText = (button, text) => {
+	// Get current button text from DOM
 	const buttonTexts = button.textContent.split(", ");
+	// Remove input that was de-activated from *buttonTexts*
 	buttonTexts.splice(buttonTexts.indexOf(text), 1);
+	// Clear out current button text from DOM
 	button.textContent = "";
 	buttonTexts.forEach(text => {
+		// Check if text is not empty string
 		if (text) {
+			// Add activated inputs to the DOM
 			button.textContent += `${text}, `;
 		}
 	});
 
+	// Don't show trailing comma and space
 	if (button.textContent.endsWith(", ")) {
 		button.textContent = button.textContent.substring(
 			0,
@@ -34,10 +43,8 @@ const removeButtonText = (button, text) => {
 };
 
 const clearButtonText = button => {
-	const inputsChecked = Array.from(degreeInputs).map(input => input.checked);
-	if (inputsChecked.includes(true)) {
-		button.textContent = button.textContent.replace("add a filter", "");
-	} else {
+	// If button text is empty, replace with 'add a filter'
+	if (!button.textContent) {
 		button.textContent = "add a filter";
 	}
 };
@@ -45,7 +52,6 @@ const clearButtonText = button => {
 degreeInputs.forEach(input => {
 	input.addEventListener("click", e => {
 		const target = e.currentTarget;
-		clearButtonText(listButton);
 		if (target.checked) {
 			if (target.id === "user-list") {
 				changeTextContent(listButton, "My List");
@@ -67,5 +73,7 @@ degreeInputs.forEach(input => {
 				removeButtonText(listButton, "3rd");
 			}
 		}
+
+		clearButtonText(listButton);
 	});
 });
