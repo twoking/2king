@@ -2,6 +2,12 @@ const listButton = document.querySelector("[data-target=degree-filter]");
 const degreeInputs = document.querySelectorAll(
 	"#degree-filter input[type=checkbox]"
 );
+const degreeIds = [
+	"user-list",
+	"first-degree",
+	"second-degree",
+	"third-degree"
+];
 
 // TODO: Clean up the the whole code in this file
 
@@ -51,23 +57,23 @@ degreeInputs.forEach(input => {
 	input.addEventListener("click", e => {
 		const target = e.currentTarget;
 		if (target.checked) {
-			if (target.id === "user-list") {
+			if (target.id === degreeIds[0]) {
 				changeTextContent(listButton, "My List");
-			} else if (target.id === "first-degree") {
+			} else if (target.id === degreeIds[1]) {
 				changeTextContent(listButton, "1st");
-			} else if (target.id === "second-degree") {
+			} else if (target.id === degreeIds[2]) {
 				changeTextContent(listButton, "2nd");
-			} else if (target.id === "third-degree") {
+			} else if (target.id === degreeIds[3]) {
 				changeTextContent(listButton, "3rd");
 			}
 		} else {
-			if (target.id === "user-list") {
+			if (target.id === degreeIds[0]) {
 				removeButtonText(listButton, "My List");
-			} else if (target.id === "first-degree") {
+			} else if (target.id === degreeIds[1]) {
 				removeButtonText(listButton, "1st");
-			} else if (target.id === "second-degree") {
+			} else if (target.id === degreeIds[2]) {
 				removeButtonText(listButton, "2nd");
-			} else if (target.id === "third-degree") {
+			} else if (target.id === degreeIds[3]) {
 				removeButtonText(listButton, "3rd");
 			}
 		}
