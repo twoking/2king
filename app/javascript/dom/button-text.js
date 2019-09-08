@@ -53,6 +53,14 @@ const clearButtonText = button => {
 	}
 };
 
+const appendDegree = button => {
+	const { textContent } = button;
+	button.textContent = textContent.replace(" Degree(s)", "");
+	if (textContent !== "My List" && textContent !== "add a filter") {
+		button.textContent += " Degree(s)";
+	}
+};
+
 degreeInputs.forEach(input => {
 	input.addEventListener("click", e => {
 		const target = e.currentTarget;
@@ -79,5 +87,6 @@ degreeInputs.forEach(input => {
 		}
 
 		clearButtonText(listButton);
+		appendDegree(listButton);
 	});
 });
