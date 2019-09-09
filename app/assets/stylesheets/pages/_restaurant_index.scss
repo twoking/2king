@@ -1,10 +1,48 @@
-#search-restaurant-nearby{
+#search-restaurant-nearby {
   width: 100%;
   border: 1px solid $blue;
   border-radius: 5px;
   font-size: 1rem;
 }
 
-.full-page-container{
+.full-page-container {
   min-height: calc(100vh - 54px);
+}
+
+@media only screen and (min-width: 768px) {
+  #search-results {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 16px;
+    justify-content: center;
+
+    .card-product {
+      flex-direction: column;
+      padding: 8px;
+      border-radius: 8px;
+      height: 230px;
+      width: 225px;
+      padding: 0;
+    }
+
+    .card-product img {
+      width: 100%;
+      min-height: 70%;
+    }
+
+    .card-product-infos {
+      width: 100%;
+      padding: 4px !important;
+      object-fit: contain;
+
+      h2 {
+        font-size: .9rem;
+      }
+
+      p {
+        font-size: .5rem;
+      }
+    }
+  }
+
 }
