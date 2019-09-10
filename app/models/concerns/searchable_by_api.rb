@@ -3,7 +3,7 @@ module SearchableByApi
   extend ActiveSupport::Concern
   module ClassMethods
     def api_search(place_id)
-      url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&type=food&fields=address_component,adr_address,alt_id,formatted_address,address_component,geometry,icon,id,name,permanently_closed,photo,place_id,plus_code,scope,type,url,utc_offset,vicinity,formatted_phone_number,website,price_level,opening_hours,rating,review,user_ratings_total&key=#{ENV['GOOGLE_API_KEY']}"
+      url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&type=food&fields=address_component,adr_address,alt_id,formatted_address,address_component,geometry,icon,id,name,permanently_closed,photo,place_id,plus_code,scope,type,url,utc_offset,vicinity,formatted_phone_number,website,price_level,opening_hours,rating,review,user_ratings_total&key=#{ENV['GOOGLE_SERVER_KEY']}"
       resto_serialized = open(url).read
       restaurant_json = JSON.parse(resto_serialized)
       restaurant = Restaurant.new(
@@ -17,8 +17,8 @@ module SearchableByApi
         website: restaurant_json["result"]["website"],
         opening_hours: restaurant_json["result"]["opening_hours"]["weekday_text"]
       )
-      restaurant_json["result"]["photos"][0..3].map do |photo|
-        restaurant.photos << "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo["photo_reference"]}&key=#{ENV['GOOGLE_API_KEY']}"
+      restaurant_json["result"]["photos"][0].map do |photo|
+        restaurant.photos << "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo["photo_reference"]}&key=#{ENV['GOOGLE_SERVER_KEY']}"
       end
       return restaurant
     end
