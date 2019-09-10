@@ -17,7 +17,7 @@ module SearchableByApi
         website: restaurant_json["result"]["website"],
         opening_hours: restaurant_json["result"]["opening_hours"]["weekday_text"]
       )
-      restaurant_json["result"]["photos"][0].map do |photo|
+      restaurant_json["result"]["photos"][0..3].map do |photo|
         restaurant.photos << "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo["photo_reference"]}&key=#{ENV['GOOGLE_SERVER_KEY']}"
       end
       return restaurant
