@@ -19,9 +19,11 @@
 
 
   <div class="container home-container panel overflow-auto active">
-    <% current_user.restaurants.each do |resto| %>
-      <%= render "restaurants/restaurant_card", resto: resto, link: true %>
-    <% end %>
+    <div class="restaurants-container">
+      <% current_user.restaurants.each do |resto| %>
+        <%= render "restaurants/restaurant_card", resto: resto, link: true %>
+      <% end %>
+    </div>
   </div>
 
   <%= render 'shared/filter/degree-filter' %>
