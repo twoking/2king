@@ -47,3 +47,74 @@
 .blue-triangle {
   border-top: 30px solid $blue !important;
 }
+
+// Tablet
+@media only screen and (min-width: 768px) {
+  .home-btn-container {
+    .footer-btn:first-of-type {
+      margin-right: 8px;
+    }
+
+    .footer-btn:last-child {
+      margin-left: 8px;
+    }
+  }
+
+  .restaurants-container {
+    display: grid !important;
+    grid-template-columns: auto auto auto;
+    grid-gap: 16px;
+    justify-content: center;
+
+    .card-product {
+      flex-direction: column;
+      padding: 8px;
+      border-radius: 8px;
+      height: 215px;
+      width: 225px;
+      padding: 0;
+    }
+
+    .card-product img {
+      width: 100%;
+      height: 70%;
+    }
+  }
+
+  .card-product-infos {
+    width: 100%;
+    padding: 4px !important;
+
+    h2 {
+      font-size: .9rem;
+    }
+
+    p {
+      font-size: .5rem;
+    }
+  }
+}
+
+// Laptop
+@media only screen and (min-width: 1024px) {
+  .home-container {
+    .card-product {
+      height: 280px;
+      width: 310px;
+    }
+  }
+
+  .card-product-infos {
+    width: 100%;
+    display: block !important;
+    padding-top: 4px;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: .8rem;
+    }
+  }
+}
