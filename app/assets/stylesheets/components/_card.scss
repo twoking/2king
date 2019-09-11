@@ -1,8 +1,9 @@
 @media only screen and (max-width: 600px) {
   .card-product {
-    max-height: 70px;
+    max-height: 75px;
+
     img {
-      height: 70px;
+      height: 100%;
       width: 20%;
       object-fit: cover;
       margin-right: 10px;
@@ -10,13 +11,13 @@
   }
 }
 
-
 .card-product {
   overflow: hidden;
   background: white;
   display: flex;
   align-items: center;
-  height: 80px
+  // min-height: 80px;
+
   img {
     object-fit: cover;
     margin-right: 10px;
