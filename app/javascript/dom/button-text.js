@@ -13,10 +13,11 @@ const degreeIds = [
 
 // Add the newly activated input to the button text
 const changeTextContent = (button, text) => {
-	// If button text is NOT 'add a filter'
+	// If button text is 'add a filter', replace by text
 	if (button.textContent === "add a filter") {
 		button.textContent = text;
 	} else {
+		// If not, append
 		button.textContent += `, ${text}`;
 	}
 };

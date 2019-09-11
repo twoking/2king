@@ -48,11 +48,16 @@ const disableOtherFilter = e => {
 
 	if (e.currentTarget.dataset.target === "friend-filter") {
 		// Special case for Connection tab text
-		if (firstElementChild.textContent !== "My List") {
-			firstElementChild.textContent = "add a filter";
-		}
+		// if (firstElementChild.textContent !== "My List") {
+		firstElementChild.textContent = "add a filter";
+		// }
+
 		uncheckAndRemoveClass($degrees);
 	} else {
+		// Gray the triangle
+		$triangle[0].classList.remove("blue-triangle");
+		// Call the function so the map clears the friend-filtered places
+		callRestaurantFilter([]);
 		uncheckAndRemoveClass($friends);
 	}
 };
