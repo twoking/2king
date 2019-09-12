@@ -8,6 +8,7 @@ const $listToggle = $("[data-target=degree-filter]");
 const $friendToggle = $("[data-target=friend-filter]");
 const $allFriendsToggle = $(".all-friends-toggler");
 const $friends = document.querySelectorAll(".friend-filter");
+const $degrees = document.querySelectorAll(".restaurant-filter");
 const $triangle = $("#triangle");
 
 // maybe need refactoring
@@ -32,10 +33,41 @@ const navTabStyle = (e, friend, list) => {
 	}
 };
 
+// Uncheck inactive tabs and the label's style
+const uncheckAndRemoveClass = items => {
+	items.forEach(item => {
+		item.checked = false;
+		item.nextElementSibling.classList.remove("font-weight-bold");
+	});
+};
+
+const disableOtherFilter = e => {
+	const { parentElement } = e.currentTarget;
+	const { firstElementChild } =
+		parentElement.previousElementSibling || parentElement.nextElementSibling;
+
+	if (e.currentTarget.dataset.target === "friend-filter") {
+		// Special case for Connection tab text
+		console.log(firstElementChild);
+		firstElementChild.textContent = "add a filter";
+		// Call the function with an empty array, so the map clears the degree-filtered places
+		callRestaurantFilter([]);
+		uncheckAndRemoveClass($degrees);
+	} else {
+		// Gray the triangle
+		$triangle[0].classList.remove("blue-triangle");
+		// Call the function with an empty array, so the map clears the friend-filtered places
+		callRestaurantFilter([]);
+		uncheckAndRemoveClass($friends);
+	}
+};
+
 $toggler.on("click", function(e) {
 	e.preventDefault();
 	const $target = $("#" + this.dataset.target).addClass("active");
 	$panel.not($target).removeClass("active");
+
+	disableOtherFilter(e);
 
 	navTabStyle(e, $friendToggle, $listToggle);
 
