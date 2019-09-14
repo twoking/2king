@@ -22,6 +22,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find_by(place_id: params[:id])
     @restaurant = Restaurant.api_search(params[:id]) unless @restaurant
     @list = @restaurant.user_list(current_user) if @restaurant.id
+    @recommended_by = @restaurant.lists.pluck(:user_id).map { |id| User.find(id).name if id != current_user.id }.compact
   end
 
   def filter
