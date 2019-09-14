@@ -5,7 +5,7 @@
     <div id="triangle"></div>
     <p class="mb-0">Select All</p>
   </div>
-  <hr>
+  <hr class="separator">
   <% current_user.followings.each do |friend| %>
   <div class="form-check">
     <input class="friend-filter regular-checkbox" type="checkbox" id="user-friend-<%=friend.id%>" value="<%= friend.id %>">
